@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.10)  1 MAR 2019 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.10)  1 MAR 2019 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**log.tex
-(./log.tex
+**Group05_Log_190301.tex
+(./Group05_Log_190301.tex
 LaTeX2e <2018-12-01>
 (c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -51,8 +51,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
-) (./log.aux)
-\openout1 = `log.aux'.
+)
+(./Group05_Log_190301.aux)
+\openout1 = `Group05_Log_190301.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -155,7 +156,7 @@ Underfull \hbox (badness 1354) in paragraph at lines 41--41
  []
 
 
-Overfull \hbox (5.5991pt too wide) in paragraph at lines 45--46
+Overfull \hbox (19.82547pt too wide) in paragraph at lines 45--46
 []\OT1/cmr/m/n/10 Meeting2[]2XB3[]FinalProjectMeeting
  []
 
@@ -170,32 +171,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--50
  []
 
 
-Overfull \hbox (5.5991pt too wide) in paragraph at lines 52--53
+Overfull \hbox (19.82547pt too wide) in paragraph at lines 52--53
 []\OT1/cmr/m/n/10 Meeting2[]2XB3[]FinalProjectMeeting
  []
 
 
-Overfull \hbox (69.77356pt too wide) in paragraph at lines 35--56
+Overfull \hbox (69.77357pt too wide) in paragraph at lines 35--56
 [] 
  []
 
 [1
 
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./log.aux) ) 
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./Group05_Log_190301.aux) ) 
 Here is how much of TeX's memory you used:
- 757 strings out of 492616
- 10207 string characters out of 6132768
+ 758 strings out of 492616
+ 10345 string characters out of 6132768
  85341 words of memory out of 5000000
  4727 multiletter control sequences out of 15000+600000
  7280 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,9n,28p,213b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c
-:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on log.pdf (1 page, 51364 bytes).
+ 23i,9n,28p,227b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Group05_Log_190301.pdf (1 page, 51289 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
