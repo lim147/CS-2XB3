@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.10)  1 MAR 2019 11:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.10)  1 MAR 2019 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -21,169 +21,171 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
+)
+(c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
 ) (./log.aux)
 \openout1 = `log.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
-LaTeX Font Info:    ... okay on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.45274pt, 483.69684pt, 85.35829pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23582pt, 56.90552pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69684pt
+* \textheight=731.23582pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 13.
 
 LaTeX Warning: No \author given.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 12.
+(Font)              <7> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 12.
+(Font)              <5> on input line 19.
 
-Overfull \hbox (92.33858pt too wide) in paragraph at lines 12--26
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--26
+Underfull \hbox (badness 10000) in paragraph at lines 19--33
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--30
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 []\OT1/cmr/m/n/10 Task
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-[]\OT1/cmr/m/n/10 Supporting
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
 []\OT1/cmr/m/n/10 Assigning
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]\OT1/cmr/m/n/10 Decided
+Underfull \hbox (badness 4454) in paragraph at lines 39--39
+[]\OT1/cmr/m/n/10 Decided roles for each
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/10 roles for
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+[]\OT1/cmr/m/n/10 2XB3[]Meeting1[]2XB3[] Fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/10 each mem-
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+\OT1/cmr/m/n/10 nal-Pro-ject-Meet-ing-Min-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/10 ber dur-ing
- []
-
-
-Underfull \hbox (badness 1365) in paragraph at lines 32--32
-\OT1/cmr/m/n/10 the Read-ing
- []
-
-
-Overfull \hbox (256.1258pt too wide) in paragraph at lines 32--33
-[]\OT1/cmr/m/n/10 2XB3[]Meeting1[]2XB3[]FinalProjectMeetingMinutes[]Lab[]02[]Gr
-oup5.pdf| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 []\OT1/cmr/m/n/10 Creating
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 \OT1/cmr/m/n/10 Nec-es-sary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
-[]\OT1/cmr/m/n/10 Discussed
+Overfull \hbox (5.5991pt too wide) in paragraph at lines 41--42
+[]\OT1/cmr/m/n/10 Meeting2[]2XB3[]FinalProjectMeeting
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
-\OT1/cmr/m/n/10 with TA
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+\OT1/cmr/m/n/10 Min-utes[]Lab[]02[]Group5.pdf,
  []
 
 
-Underfull \hbox (badness 6284) in paragraph at lines 34--34
-\OT1/cmr/m/n/10 about what
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
-\OT1/cmr/m/n/10 doc-u-ments
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
-\OT1/cmr/m/n/10 were nec-
- []
-
-
-Underfull \hbox (badness 8019) in paragraph at lines 34--34
-\OT1/cmr/m/n/10 es-sary, and
- []
-
-
-Overfull \hbox (230.72017pt too wide) in paragraph at lines 34--35
-[]\OT1/cmr/m/n/10 Meeting2[]2XB3[]FinalProjectMeetingMinutes[]Lab[]02[]Group5.p
-df,
- []
-
-
-Overfull \hbox (63.80864pt too wide) in paragraph at lines 34--35
-\OT1/cmr/m/n/10 Group05[]Project[]Roles.pdf,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []\OT1/cmr/m/n/10 Worked
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 \OT1/cmr/m/n/10 on Re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 \OT1/cmr/m/n/10 quire-ments
  []
 
 
-Overfull \hbox (79.69476pt too wide) in paragraph at lines 36--37
-[]\OT1/cmr/m/n/10 Requirements[]Specification.doc| 
- []
-
-
-Overfull \hbox (51.98024pt too wide) in paragraph at lines 28--39
+Overfull \hbox (69.77356pt too wide) in paragraph at lines 35--46
 [] 
  []
 
@@ -191,19 +193,19 @@ Overfull \hbox (51.98024pt too wide) in paragraph at lines 28--39
 
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./log.aux) ) 
 Here is how much of TeX's memory you used:
- 228 strings out of 492616
- 2419 string characters out of 6132768
- 66645 words of memory out of 5000000
- 4217 multiletter control sequences out of 15000+600000
+ 757 strings out of 492616
+ 10207 string characters out of 6132768
+ 82341 words of memory out of 5000000
+ 4727 multiletter control sequences out of 15000+600000
  7280 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,9n,19p,273b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 23i,9n,28p,274b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c
 :/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive
 /2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on log.pdf (1 page, 50196 bytes).
+Output written on log.pdf (1 page, 50218 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
