@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.10)  1 MAR 2019 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.10)  8 MAR 2019 10:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -176,7 +176,12 @@ Overfull \hbox (19.82547pt too wide) in paragraph at lines 52--53
  []
 
 
-Overfull \hbox (69.77357pt too wide) in paragraph at lines 35--56
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+[]\OT1/cmr/m/n/10 TimeADT.java, Fun-da-men-tal-
+ []
+
+
+Overfull \hbox (69.77357pt too wide) in paragraph at lines 35--58
 [] 
  []
 
@@ -187,7 +192,7 @@ Overfull \hbox (69.77357pt too wide) in paragraph at lines 35--56
 Here is how much of TeX's memory you used:
  758 strings out of 492616
  10345 string characters out of 6132768
- 85341 words of memory out of 5000000
+ 86341 words of memory out of 5000000
  4727 multiletter control sequences out of 15000+600000
  7280 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -196,7 +201,7 @@ Here is how much of TeX's memory you used:
 onts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Group05_Log_190301.pdf (1 page, 51289 bytes).
+Output written on Group05_Log_190301.pdf (1 page, 51996 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
