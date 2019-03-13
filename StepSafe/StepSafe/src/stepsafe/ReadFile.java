@@ -23,7 +23,7 @@ public class ReadFile {
 				continue;
 			}
 			String[] temp = line.split(",");
-			dbase[count] = new Event(temp[0], Integer.parseInt(temp[2]), temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[7]), temp[8], Double.parseDouble(temp[12]), Double.parseDouble(temp[13]));
+			dbase[count - 1] = new Event(temp[0], Integer.parseInt(temp[2]), temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[7]), temp[8], Double.parseDouble(temp[12]), Double.parseDouble(temp[13]));
 			System.out.println(line);
 			count++;
 		}
