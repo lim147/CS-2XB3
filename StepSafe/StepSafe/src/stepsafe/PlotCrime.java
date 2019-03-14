@@ -9,17 +9,32 @@ import edu.princeton.cs.algs4.*;
 
 public class PlotCrime {
 	
-	public static void plot(Point2D start,Point2D end) {
+	public static void plot_route(Point2D start,Point2D end) {
 		StdDraw.point(start.x(), start.y());
 		StdDraw.point(end.x(), end.y());
 	}
+	
+	public static void plot_crimes(Event[] al) {
+		for(int i = 0;i < al.length;i++) {
+			StdDraw.point(al[i].getCoordx(), al[i].getCoordy());
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 
-        StdDraw.setPenRadius(0.01);
+        StdDraw.setPenRadius(0.05);
         StdDraw.setPenColor(StdDraw.BLUE);
 		Point2D s = new Point2D(0.5,0.5);
 		Point2D e = new Point2D(0.3,0.7);
-		plot(s,e);
+		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", new Point2D(0.4,0.4));
+		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", new Point2D(0.2,0.6));
+		Event[] list = new Event[2];
+		list[0] = rob;
+		list[1] = zach;
+		plot_crimes(list);
+		
+		plot_route(s,e);
 
         
         
