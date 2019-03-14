@@ -11,25 +11,24 @@ public class Event implements Comparable<Event>{
 	private final int Day;
 	private final int Hour;
 	private final String MCI;
-	private final double Lat;
-	private final double Long;
 	private double distTo;
+	private final Point2D Coord;
 	
 //	Constructor
-	public Event(String Id, int Year, String Month, int Day, int Hour, String MCI, double Lat, double Long) {
+	public Event(String Id, int Year, String Month, int Day, int Hour, String MCI, Point2D Coord) {
 		this.Id = Id;
 		this.Year = Year;
 		this.Month = Month;
 		this.Day = Day;
 		this.Hour = Hour;
 		this.MCI = MCI;
-		this.Lat = Lat;
-		this.Long = Long;
+		this.Coord = Coord;
+
 	}
 	
 	private void distanceTo(Event x) {
-		double xdist = (this.Long + x.Long);
-		double ydist = (this.Lat + x.Lat);
+		double xdist = (this.Coord.x() + x.Coord.x());
+		double ydist = (this.Coord.y() + x.Coord.y());
 		this.distTo = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
 	}
 	
@@ -66,17 +65,17 @@ public class Event implements Comparable<Event>{
 		return this.MCI;
 	}
 	
-	public double getLat() {
-		return this.Lat;
+	public double getCoordx() {
+		return this.Coord.x();
 	}
 	
-	public double getLong() {
-		return this.Long;
+	public double getCoordy() {
+		return this.Coord.y();
 	}
 	
 	public static void main(String[] args) throws IOException {
-		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", 1.2, 1.3);
-		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", 2.2, 2.3);
+		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", new Point2D(0,0));
+		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", new Point2D(1,0));
 		System.out.println(rob.getDay());
 		System.out.println(rob.distTo);
 		

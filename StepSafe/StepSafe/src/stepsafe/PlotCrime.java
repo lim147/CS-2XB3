@@ -17,10 +17,8 @@ public class PlotCrime {
 
         StdDraw.setPenRadius(0.01);
         StdDraw.setPenColor(StdDraw.BLUE);
-        
-        
 		Point2D s = new Point2D(0.5,0.5);
-		Point2D e = new Point2D(5,5);
+		Point2D e = new Point2D(0.3,0.7);
 		plot(s,e);
 
         
