@@ -7,7 +7,7 @@ package stepsafe;
  *  @since 2019-03-08
  */
 
-public class FundamentalTypes {
+public class EnumTypes {
 	
 	/**
 	 * Enum type for premise of the crime
