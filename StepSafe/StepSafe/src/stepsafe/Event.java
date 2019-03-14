@@ -1,5 +1,7 @@
 package stepsafe;
 
+import java.io.IOException;
+
 public class Event implements Comparable<Event>{
 //	Attributes
 	
@@ -72,11 +74,13 @@ public class Event implements Comparable<Event>{
 		return this.Long;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", 1.2, 1.3);
 		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", 2.2, 2.3);
 		System.out.println(rob.getDay());
 		System.out.println(rob.distTo);
 		
+		Event[] test = ReadFile.read(); 
+		System.out.println(test[0].Id);
 	}
 }
