@@ -27,8 +27,8 @@ public class Event implements Comparable<Event>{
 	}
 	
 	private void distanceTo(Event x) {
-		double xdist = (this.Coord.x() + x.Coord.x());
-		double ydist = (this.Coord.y() + x.Coord.y());
+		double xdist = (this.Coord.x() - x.Coord.x());
+		double ydist = (this.Coord.y() - x.Coord.y());
 		this.distTo = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
 	}
 	
@@ -73,13 +73,17 @@ public class Event implements Comparable<Event>{
 		return this.Coord.y();
 	}
 	
+	public String toString() {
+		return String.format("%s, %s %d %d : %d, %s, %s",Id, Month, Day, Year, Hour, MCI, Coord);
+	}
+	
 	public static void main(String[] args) throws IOException {
 		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", new Point2D(0,0));
 		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", new Point2D(1,0));
 		System.out.println(rob.getDay());
 		System.out.println(rob.distTo);
+		System.out.println(rob.toString());
 		
-		Event[] test = ReadFile.read(); 
-		System.out.println(test[0].Id);
+		
 	}
 }
