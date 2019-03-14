@@ -44,7 +44,7 @@ Step safe will take an input of a starting location and destination, and output 
 \section* {UML Diagram}
 
 \begin{center}
-\includegraphics[scale = 0.65]{UML.png}
+\includegraphics[scale = 0.80]{UML.png}
 \end{center}
  
 \newpage
@@ -55,14 +55,14 @@ Step safe will take an input of a starting location and destination, and output 
 
 \subsection*{Module}
 
-FundamentalTypes
+EnumTypes
 
 \subsection* {Description}
-This module consists of fundamental supporting data types for crime information.
+This module consists of fundamental supporting data types for crime event information.
 
 \subsection* {Uses}
 
-TimeADT(s, h)
+None
 
 \subsection* {Syntax}
 
@@ -77,9 +77,6 @@ MCI = \{assault, breakAndEnter, robbery\}\\
 Premise = \{outside, house, commercial, apartment, other\}\\
 Hood =  tuple of  (id : $\mathbb{N}$, area : String)\\
 ~\\
-CrimeInfoT = tuple of (time: TimeADT(s, h), place: Premise, \\
-coordinate: CoordinateT, type: MCI, neighbourhood: Hood)
-
 \subsubsection* {Exported Access Programs}
 
 None
@@ -94,20 +91,16 @@ None
 
 None
 
-\subsubsection* {Assumptions}
-
-None
-
 \newpage
 
 \section* {Occurrence Time ADT Module}
 
 \subsection*{Template Module}
 
-TimeADT(s, h)
+Point2D(x, y)
 
 \subsection*{Description}
-The module provides the abstract data type for the occurrence time of crimes.
+The module provides the abstract data type for the coordinate of a point. The ADT also provides the methods to transfer points from Cartesian Coordinate System to Polar Coordinate System.
 
 \subsection* {Uses}
 
@@ -121,7 +114,7 @@ None
 
 \subsubsection* {Exported Types}
 
-TimeADT = ?
+Point2D = ?
 
 \subsubsection* {Exported Access Programs}
 
@@ -129,19 +122,17 @@ TimeADT = ?
 \hline
 \textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
 \hline
-new SeqADT & s : string, h : string  & TimeADT & InvalidArguments\\
+new Point2D & a : $\mathbb{R}$, b : $\mathbb{R}$ & Point2D & \\
 \hline
-getYear & ~ & int & ~\\
+x & ~ & $\mathbb{R} $ & ~\\
 \hline
-getMonth & ~ & int & ~\\
+y & ~ & $\mathbb{R}$ & ~\\
 \hline
-getDay & ~ & int & ~\\
+r & ~ &  $\mathbb{R}$ & ~\\
 \hline
-getHour& ~ & int & ~\\
+theta & ~ & $\mathbb{R}$ & ~\\
 \hline
-toWeekDay & ~ & WeekDays & ~\\
-\hline
-compareTo & TimeADT & int & ~\\
+distanceTo & Point2D & $\mathbb{R}$ & ~\\
 \hline
 toString & ~ & string & ~\\
 \hline
@@ -151,79 +142,201 @@ toString & ~ & string & ~\\
 
 \subsubsection* {State Variables}
 
-$year$: integer\\
-$month$: integer\\
-$day$: integer\\
-$hour$: integer\\
+$x$: $\mathbb{R}$, x value of the point\\
+$y$: $\mathbb{R}$, y value of the point\
+
 
 \subsubsection* {State Invariant}
 
-$month \in [1..12]$ \\
-$hour \in [0..24]$ \\
-output of $compareTo \in [-1, 0, 1]$ 
+None
 
 \subsubsection* {Assumptions}
 
-The input string $s$ should be the format: $yyyy-mm-dd$ where year, month and day are separated by dash.\\
-
+ None
+ 
 \subsubsection* {Access Routine Semantics}
 
-\noindent new TimeADT($s, h$):
+\noindent new Point2D($a, b$):
 \begin{itemize}
-\item transition: $year :=$ extract year information from input s and convert to integer
-\\$~~~~~~~~~~~~~~~~month :=$ extract month information from input s and convert to integer
-\\$~~~~~~~~~~~~~~~day :=$ extract day information from input s and convert to integer
-\\$~~~~~~~~~~~~~~~hour := (integer) h$
+\item transition: $x, y := a, b$
 \item output: $out := \mbox{self}$
-\item exception: $(\text{day not in the range of the month}  \Rightarrow \text{InvalidArgument})$
+\item exception: none
+\end{itemize}
+
+\noindent x():
+\begin{itemize}
+\item output: $out := x$
+\item exception: none
+\end{itemize}
+
+\noindent y():
+\begin{itemize}
+\item output: $out := y$
+\item exception: none
+\end{itemize}
+
+\noindent r():
+\begin{itemize}
+\item output: $out := \sqrt{x^2 + y^2}$
+\item exception: none
+\end{itemize}
+
+\noindent theta():
+\begin{itemize}
+\item output: $out := atan(y/x)$
+\item exception: none
+\end{itemize}
+
+
+\noindent distTo($x', y'$):
+\begin{itemize}
+\item output: $out := \sqrt{(x - x')^2 + (y - y')^2}$
+\item exception: none
+\end{itemize}
+
+
+\noindent toString():
+\begin{itemize}
+\item output: $out := $ string representation of the point in the format: $(x, y)$
+\item exception: None
+\end{itemize}
+
+
+\newpage
+
+\section* {Crime Event Information ADT Module}
+
+\subsection*{Template Module}
+
+Event(Id, Year, Month, Day, Hour, MCI, Coord)
+
+\subsection*{Description}
+The module provides the abstract data type for the information of an event. 
+
+\subsection* {Uses}
+
+None
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+Event = ?
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | p{5cm} |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+new Event & Id: string, Year : $\mathbb{N}$, Month : $\mathbb{N}$ & Event & \\
+~  &  Hour: $\mathbb{N}$, MCI : MCI, Coord : Point2D& ~ & \\
+\hline
+getId & ~ & string  & ~\\
+\hline
+getYear & ~ & $\mathbb{N}$ & ~\\
+\hline
+getMonth & ~ & $\mathbb{N}$& ~\\
+\hline
+getDay & ~ &$\mathbb{N}$ & ~\\
+\hline
+getHour & ~ & $\mathbb{N}$ & ~\\
+\hline
+getMCI & ~ & MCI & ~\\
+\hline
+getCoordx & & $\mathbb{R}$ & ~\\
+\hline
+getCoordy & & $\mathbb{R}$ & ~\\
+\hline
+toString & ~ & string & ~\\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$Id$: string\\
+$Year$: $\mathbb{N}$\\
+$Month$: $\mathbb{N}$\\
+$Day$: $\mathbb{N}$\\
+$Hour$: $\mathbb{N}$\\
+$MCI$: MCI\\
+$Coord$: Coord\\
+
+
+\subsubsection* {State Invariant}
+Year $\in [1..12]$\\
+Month $\in$ [January, February, March, April, May, June, July, August, September, \\
+$~~~~~~~~~~~~~~~$October, November, December]\\
+Day $\in [1..31]$\\
+Hour $\in [0..24]$\\
+
+\subsubsection* {Assumptions}
+
+ None
+ 
+\subsubsection* {Access Routine Semantics}
+
+\noindent new Event(id, y, m, d, h, mci, coord):
+\begin{itemize}
+\item transition: $Id, Year, Month, Day, Hour, MCI, Coord := id, y, m, d, h, mci, coord$
+\item output: $out := \mbox{self}$
+\item exception: none
+\end{itemize}
+
+\noindent getId():
+\begin{itemize}
+\item output: $out := id$
+\item exception: none
 \end{itemize}
 
 \noindent getYear():
 \begin{itemize}
-\item output: $out := year$
+\item output: $out := Year$
 \item exception: none
 \end{itemize}
 
 \noindent getMonth():
 \begin{itemize}
-\item output: $out := month$
-\item exception: none
-\end{itemize}
-
-\noindent getDay():
-\begin{itemize}
-\item output: $out := day$
+\item output: $out := Month$
 \item exception: none
 \end{itemize}
 
 \noindent getHour():
 \begin{itemize}
-\item output: $out := hour$
+\item output: $out := Hour$
 \item exception: none
 \end{itemize}
 
-
-\noindent toWeekDay():
+\noindent getMCI():
 \begin{itemize}
-\item output: $out := \text{day of a week}$
+\item output: $out := MCI$
 \item exception: none
 \end{itemize}
 
-
-\noindent compareTo:
+\noindent getCoordx():
 \begin{itemize}
-\item output: $i, out := $ -1, 0, 1 respectively if t1 is before, equal, after t2
+\item output: $out := Coord.x()$
+\item exception: none
+\end{itemize}
+
+\noindent getCoordy():
+\begin{itemize}
+\item output: $out := Coord.y()$
 \item exception: none
 \end{itemize}
 
 \noindent toString():
 \begin{itemize}
-\item output: $out := $ string representation of the time in the format: $yyyy-mm-dd:hh$
+\item output: $out := $ string representation of the event in the format: 
+\\$~~~~~~~~~~~~~~~~~$Id, Month Day Year : Hour, MCI, (Coord.x(), Coord.y())
 \item exception: None
 \end{itemize}
-
-\subsubsection* {Local Types}
-WeekDays = \{Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday\}\\
 
 
 \newpage
@@ -235,20 +348,18 @@ WeekDays = \{Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday\}\\
 CrmALst
 
 \subsection*{Description}
-The module provides an abstract object to store crime records.
+The module provides an ADT to store crime events.
 
 \subsection*{Functionalities}
-$add$ - add a crime record to the sequence\\
-$remove$ - remove a crime record from the sequence\\
-$elm$ - check if a crime record exists in the sequence\\
-$info$ - returns the detailed information of a crime\\
-$count$ - count the number of crimes which satisfy the property given by the input function
+$add$ - add an event to the sequence\\
+$start$ - go back to the first event of the sequence\\
+$current$ - return the current event\\
+$next$ - move to the next event and return its information
 
 \subsection* {Uses} 
 
-FundamentalTypes\\
-TimeADT(s, h)\\
-GetCrmRate
+EnumTypes\\
+Point2D(x, y)\\
 
 \subsection* {Syntax}
 
@@ -258,7 +369,7 @@ None
 
 \subsubsection* {Exported Types}
 
-FundamentalTypes
+CrmALst = ?
 
 \subsubsection* {Exported Access Programs}
 
@@ -266,19 +377,15 @@ FundamentalTypes
 \hline
 \textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
 \hline
-init & ~ & ~ & ~\\
+new CrmALst & ~ & CrmALst & ~\\
 \hline
-add & string, CrimeInfoT & ~ & KeyError\\
+addEvent & Event & ~ & KeyError\\
 \hline
-remove & string & ~ & KeyError\\
+start & ~ & ~ & \\
 \hline
-elm & string & $\mathbb{B}$ & ~\\
+current & ~ & Event & ~\\
 \hline
-info & string & CrimeInfoT & KeyError\\
-\hline
-count & $\text{CrimeInfoT} \rightarrow \mathbb{B}$ & integer &\\
-\hline
-sort & ~ & \text{sequence of string} &\\
+next & ~ & Event & OutOfBound\\
 \hline
 
 \end{tabular}
@@ -287,7 +394,8 @@ sort & ~ & \text{sequence of string} &\\
 
 \subsubsection* {State Variables}
 
-$s$: sequence of CrimeT
+$i$: $\mathbb{N}$, position indicator\\
+$lst$ : a sequence of Event
 
 \subsubsection* {State Invariant}
 
@@ -295,62 +403,45 @@ None
 
 \subsubsection* {Assumptions}
 
-CrmALst.init() is called before any other access program.
+CrmALst() is called before any other access program.
 
 \subsubsection* {Access Routine Semantics}
 
-\noindent init():
+\noindent CrmALst():
 \begin{itemize}
-\item transition: $s := \{ \}$
+\item transition: $i, lst := 0, [ ~]$
 \item exception: none
 \end{itemize}
 
-\noindent add($id$, $i$):
+\noindent addEvent(e):
 \begin{itemize}
-\item transition: $s := s \cup \{ \langle id, i \rangle \}$
-\item exception: $(\langle id, ? \rangle \in s \Rightarrow \text{KeyError} )$
+\item transition: $s := s || \langle e \rangle $
+\item exception: $(e \in s \Rightarrow \text{KeyError} )$
 \end{itemize}
 
-\noindent remove($id$):
+\noindent start():
 \begin{itemize}
-\item transition: $s := s - \{ \langle id, i \rangle \}$ where $\langle id, i
-  \rangle \in s$
-\item exception: $(\langle id, i \rangle \notin s \Rightarrow \text{KeyError} )$
-\end{itemize}
-
-\noindent elm($id$):
-\begin{itemize}
-\item output: $out := \langle id, i \rangle \in s$
+\item transition: $i := 0$
 \item exception: none
 \end{itemize}
 
-\noindent info($id$):
+\noindent current():
 \begin{itemize}
-\item output: $out := i$ where $\langle id, i \rangle \in s$
-\item exception: $(\langle id, i \rangle \notin s \Rightarrow \text{KeyError} )$
+\item output: $out := lst[i]$
+\item exception: none
 \end{itemize}
 
-\noindent count($f$):
+\noindent next():
 \begin{itemize}
-\item output: $out := (+ i: \text{CrimeInfoT} | i \in CrimeInfoT \wedge f(i) : 1)$
-\item exception: None
- \end{itemize}
- 
- \noindent sort:
-\begin{itemize}
-\item output: $out := $ a sequence of crime IDs which is sorted by ascending order based on the crime of the around area gotten by applying $getCrime$ function on its CrimeInfoT
-\item exception: None
-
+\item output: $out := lst[i]$ 
+\item transition: $i := i+1$
+\item exception: $(i > |lst| - 1 \Rightarrow \text{KeyError} )$
 \end{itemize}
 
-
-\subsection*{Local Types}
-
-CrimeT = tuple of (id: string, info: CrimeInfoT)
 
 \newpage
 
-% to do: Sort
+% to do: PlotCrm
 \section* {Get Crime Module}
 
 \subsection*{Module}
@@ -433,7 +524,7 @@ The function $getCrime$ do searching on $s$ and count the number of crimes happe
 Read
 
 \subsection* {Description}
-The module provides functions to read data from dataset.
+The module provides functions to read data from database and fill events to the CrmALst instance.
 
 \subsection* {Uses}
 
@@ -450,7 +541,7 @@ None
 \begin{tabular}{| l | l | l | l |}
 \hline
 \textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
-load\_crime\_data & $s: \mbox{string}$ & ~ & ~\\
+load\_crime\_data & $dbase: \mbox{CrmALst}$ & ~ & ~\\
 \hline
 \end{tabular}
 
@@ -474,17 +565,14 @@ The input file will match the given specification.
 
 \subsubsection* {Access Routine Semantics}
 
-\noindent load\_crime\_data($s$)
+\noindent load\_crime\_data($dbase$)
 \begin{itemize}
-\item transition: read data from the file crime\_dataset associated with the string s.
-  Use this data to update the state of the CrmALst module.  Load will first
-  initialize CrmLst (CrmLst.init()) before filling CrmALst with crime records that
-  follows the types in CrimeT.
+\item transition: read data from the file crime\_dataset named "MCI\_2014\_to\_2017.csv".
+  Use this data to update the state of the CrmALst instance.  Load will fill CrmALst with crime records that
+  follows the types in Event.
 
   The input csv file contains the following fileds:\\
-  $x$: lantitude ,  $y$: longitude ,  $event\_unique\_id$: id of the crime , $occurrencedata$: crime occurrence date , 
-  $premisetype$: premise type , $offence$: the short stand for MIS (e.g. B\&E for BreakAndRnter), 
-  $MIS$: MIS , $Hood\_ID$: hood id , $Neighbourhood$: the area name\\
+  event\_unique\_id, occurancedate, occuranceyear, occurancemonth, occuranceday, occurancedayofyear, occurancedayofweek, occurancehour, MCI, Division, Hood\_ID, Neighborhood, Lat, Long
   
  
 \item exception: none
