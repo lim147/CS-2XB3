@@ -1,5 +1,12 @@
 package stepsafe;
 
+/**
+ *  The {@code Point2D} class holds a data type for a 2D Point/Coordinate
+ *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
+ *  @version 1.0
+ *  @since 2019-03-13
+ */
+
 import java.awt.Point;
 
 public class Point2D {

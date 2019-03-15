@@ -1,5 +1,12 @@
 package stepsafe;
 
+/**
+ *  The {@code ReadFile} class reads from the dataset file
+ *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
+ *  @version 1.0
+ *  @since 2019-03-13
+ */
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

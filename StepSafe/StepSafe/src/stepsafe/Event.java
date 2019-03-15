@@ -1,5 +1,12 @@
 package stepsafe;
 
+/**
+ *  The {@code Event} class is an Abstract Data Type for Crime Events
+ *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
+ *  @version 1.0
+ *  @since 2019-03-13
+ */
+
 import java.io.IOException;
 
 public class Event implements Comparable<Event>{
