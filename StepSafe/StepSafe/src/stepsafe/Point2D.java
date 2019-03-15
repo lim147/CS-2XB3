@@ -29,10 +29,19 @@ public class Point2D {
 	public double r() {return Math.sqrt(x*x + y*y); }
 	public double theta() {return Math.atan2(y,  x);}
 	
+	//calculate distance(km)
 	public double distanceTo(Point2D that) {
-		double dx = this.x - that.x;
-		double dy = this.y - that.y;
-		return Math.sqrt(dx*dx + dy*dy);
+		//https://www.movable-type.co.uk/scripts/latlong.html
+		int R = 6371; //km
+		double x1 = Math.toRadians(this.x);
+		double x2 = Math.toRadians(that.x);
+		double dlat= Math.toRadians(this.x - that.x);
+		double dlng = Math.toRadians(this.y - that.y);
+		
+		double a = Math.pow(Math.sin(dlat/2), 2) + Math.cos(x1) * Math.cos(x2)*Math.pow(Math.sin(dlng/2), 2);
+		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		double dis = R * c;
+		return dis;
 	}
 	
 	public String toString() {
@@ -63,7 +72,11 @@ public class Point2D {
 		System.out.println("dist(a,b) = " + a.distanceTo(b));
 		
 		**/
-
+		Point2D p = new Point2D(43.7688293, -79.520401);
+		Point2D q = new Point2D(43.7646408, -79.3446503);
+		System.out.println("dist(p, q) = " + p.distanceTo(q));
+		
+		
 	}
 
 }
