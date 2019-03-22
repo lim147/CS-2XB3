@@ -1,7 +1,8 @@
 package stepsafe;
 import edu.princeton.cs.algs4.*;
+
 /**
- *  The {@code FundamentalTypes} class holds types to store crime information
+ *  The {@code PlotCrime} class holds types to store crime information
  *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
  *  @version 1.0
  *  @since 2019-03-13
