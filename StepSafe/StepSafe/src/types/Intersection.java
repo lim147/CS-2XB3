@@ -15,7 +15,6 @@ public class Intersection {
 	private final Point2D location;
 	private double crimeDst; // TODO: calls a function to find average crime distance
 	
-	
     /**
      * Constructor for an intersection that takes Name, and coordinates as two doubles
      *

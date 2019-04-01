@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	1. Algorithm to find intersection points on a street  -  In progress
 	2. Given a start and end point, find the middle point and then a sufficient radius
 	3. Function to find all crimes within the sufficient radius
@@ -12,3 +13,10 @@
 	Comments:
 		If all the crime data are on intersections, and we are able to find all the intersections along
 		the route. Do we need to do 2,3, and 4? 
+=======
+	- Algorithm to find intersection points on a street  -  In progress
+	- Given a start and end point, find the middle point and then a sufficient radius - In progress by Alice
+	- Function to find all crimes within the sufficient radius
+	- Function to find distance from a point to all crimes within the sufficient radius
+        - Store distance values in a BST 
+>>>>>>> af65a68ea3e73056eb56b51e2a5d9141ff3d831b
