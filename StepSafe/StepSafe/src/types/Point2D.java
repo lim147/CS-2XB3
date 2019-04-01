@@ -24,6 +24,7 @@ public class Point2D {
 		this.y = 0.0;
 	}
 	
+	
 	public double x() {return x;}
 	public double y() {return y;}
 	public double r() {return Math.sqrt(x*x + y*y); }

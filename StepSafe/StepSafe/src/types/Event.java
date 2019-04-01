@@ -80,6 +80,10 @@ public class Event implements Comparable<Event>{
 		return this.Coord.y();
 	}
 	
+	public Point2D getPoint2D() {
+		return this.Coord;
+	}
+	
 	public String toString() {
 		return String.format("%s, %s %d %d : %d, %s, %s",Id, Month, Day, Year, Hour, MCI, Coord);
 	}

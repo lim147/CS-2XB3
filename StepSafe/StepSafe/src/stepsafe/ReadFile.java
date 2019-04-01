@@ -39,20 +39,4 @@ public class ReadFile {
 		}
 		fr.close();
 	}
-	
-	
-	
-	//test:
-	public static void main(String[] args) throws NumberFormatException, IOException{
-		//create a CrmALst instance:
-		CrmALst dbase = new CrmALst();
-		//apply function to load data to dbase:
-		read_from_db(dbase);
-		//dbase.next();
-		System.out.println(dbase.current().toString());
-		
-		
-	}
-		
-
 }

@@ -23,13 +23,7 @@ public class EnumTypes {
 		assult, breakAndEnter, robbery;
 	}
 	
-	/**
-	 * Data type for coordinate
-	 */
-	class CoordinateT{
-		float x;
-		float y;
-	}
+
 	
 	/**
 	 * Data type for Hood

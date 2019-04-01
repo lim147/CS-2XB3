@@ -45,6 +45,13 @@ public class CrmALst {
 		return lst.get(i-1);
 	}
 	
+	public boolean end() {
+		if (i == lst.size())
+			return true;
+		else
+			return false;
+	}
+	
 	
 	
 	
