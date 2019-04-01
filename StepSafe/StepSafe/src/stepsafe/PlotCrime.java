@@ -1,5 +1,7 @@
 package stepsafe;
 import edu.princeton.cs.algs4.*;
+import types.Event;
+import types.Point2D;
 
 /**
  *  The {@code PlotCrime} class holds types to store crime information

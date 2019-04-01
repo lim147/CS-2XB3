@@ -1,4 +1,4 @@
-package stepsafe;
+package types;
 
 /**
  *  The {@code Event} class is an Abstract Data Type for Crime Events

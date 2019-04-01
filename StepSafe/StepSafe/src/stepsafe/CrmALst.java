@@ -3,6 +3,8 @@ package stepsafe;
 import java.util.ArrayList;
 import java.util.List;
 
+import types.Event;
+
 /**
  *  The {@code CrmALst} class is an object that holds the list of Crime Events relevant to user input
  *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera

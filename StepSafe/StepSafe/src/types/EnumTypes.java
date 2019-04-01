@@ -1,4 +1,4 @@
-package stepsafe;
+package types;
 
 /**
  *  The {@code FundamentalTypes} class holds types to store crime information

@@ -1,4 +1,4 @@
-package stepsafe;
+package types;
 
 /**
  *  The {@code Point2D} class holds a data type for a 2D Point/Coordinate

@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import types.Event;
+import types.Point2D;
+
 public class ReadFile {
 	public static void read_from_db(CrmALst dbase) throws NumberFormatException, IOException {
 		
