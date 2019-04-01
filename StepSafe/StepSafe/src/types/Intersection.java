@@ -2,10 +2,8 @@ package types;
 
 /**
  *  The {@code Intersection} class represents a ADT for an Intersection at some coordinate location
- *  <p>
  *  Dependencies: Point2D.java
- *  <p>
-
+ *  
  *  @author Alice Ip
  *  @author Meijing Li
  *  @author Robert Vardy
