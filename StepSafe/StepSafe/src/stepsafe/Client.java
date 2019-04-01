@@ -42,8 +42,7 @@ public class Client {
 			if (mid.distanceTo(tEvent.getPoint2D()) < radius) {
 				cList.addEvent(tEvent);
 			}
-		}	
-		
+		}		
 	}
 	
 	
