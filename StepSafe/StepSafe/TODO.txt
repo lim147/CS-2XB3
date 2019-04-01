@@ -1,5 +1,14 @@
-	- Algorithm to find intersection points on a street  -  In progress
-	- Given a start and end point, find the middle point and then a sufficient radius
-	- Function to find all crimes within the sufficient radius
-	- Function to find distance from a point to all crimes within the sufficient radius
-        - Store distance values in a BST - In progress by Alice
+	1. Algorithm to find intersection points on a street  -  In progress
+	2. Given a start and end point, find the middle point and then a sufficient radius
+	3. Function to find all crimes within the sufficient radius
+	4. Function to find distance from a point to all crimes within the sufficient radius
+        5. Store distance values in a BST - In progress by Alice
+
+
+
+
+
+
+	Comments:
+		If all the crime data are on intersections, and we are able to find all the intersections along
+		the route. Do we need to do 2,3, and 4? 
