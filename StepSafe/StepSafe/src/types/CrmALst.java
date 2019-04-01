@@ -1,9 +1,7 @@
-package stepsafe;
+package types;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import types.Event;
 
 /**
  *  The {@code CrmALst} class is an object that holds the list of Crime Events relevant to user input
@@ -16,7 +14,11 @@ public class CrmALst {
 	private int i; //counter
 	private List<Event> lst;
 	
-	//constructor
+    /**
+     * Constructor for a list of Crime events
+     *
+     * 
+     */
 	public CrmALst() {
 		this.i = 0;
 		this.lst = new ArrayList<Event>();
@@ -24,7 +26,12 @@ public class CrmALst {
 	}
 	
 	
-	//mutator: add the event to the array
+    /**
+     * Mutator where a crime event is added to the list
+     *
+     * @param  e the event being added
+     * 
+     */
 	public void addEvent(Event e) {
 		lst.add(e);
 	}

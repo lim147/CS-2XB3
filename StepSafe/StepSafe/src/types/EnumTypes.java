@@ -23,8 +23,6 @@ public class EnumTypes {
 		assult, breakAndEnter, robbery;
 	}
 	
-
-	
 	/**
 	 * Data type for Hood
 	 */
