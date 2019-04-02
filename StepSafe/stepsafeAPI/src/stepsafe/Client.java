@@ -17,21 +17,15 @@ import types.Event;
 
 public class Client {
 
-	public static Point2D start;
-	public static Point2D end;
+	public Point2D start;
+	public Point2D end;
 	
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		//create a CrmALst instance:
-		CrmALst dbase = new CrmALst();
-		//apply fuhttps://marketplace.eclipse.org/content/eclipse-java-ee-developer-tools-0nction to load data to dbase:
-		ReadFile.read_from_db(dbase);
-		//dbase.next();
-		System.out.println(dbase.current().toString());
-		
-		Point2D mid = new Point2D((end.x()+ start.x())/2,(end.y()+start.y())/2);
-		double radius = mid.distanceTo(start)*4;
-		
+	//add constructor:
+	public Client(Point2D s, Point2D e) {
+		start = s;
+		end = e;
 	}
+	
 
     /**
      * Filters through a list of crimes, and returns a list where the crimes fall under the radius of a target Point2D
