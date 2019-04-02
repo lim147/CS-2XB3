@@ -6,7 +6,6 @@
 	<%
 		String s = request.getParameter("start");
 		String d = request.getParameter("end");
-		
 	%>
 	
 	The input is: 
