@@ -6,7 +6,14 @@
 	<%
 		String s = request.getParameter("start");
 		String d = request.getParameter("end");
+		
 	%>
-	The input is: s  d
+	
+	The input is: 
+	
+	<% 
+		out.println(s + " " + d);
+	%>
+	
 </body>
 </html>
