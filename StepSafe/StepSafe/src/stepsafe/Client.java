@@ -51,24 +51,20 @@ public class Client {
 		
 		while (oList.end() == false) {
 			Event tEvent = oList.next();
-			if (origin.distanceTo(tEvent.getPoint2D()) < r) {
+			if (inRadius(origin, tEvent.getPoint2D(),r))
 				cList.addEvent(tEvent);
-			}
 		}
 		return cList;
 		
 	}
 
     /**
-     * Filters through a list of crimes, and returns a list where the crimes fall under the radius of a target Point2D
-     * 1 mile =1.609 kilometers
-     * 1 degree of longitude = ~55.2428 miles = ~88.8856652 kilometers based in Saratoga, California
-     * 1 kilometer =~0.01125040801 degrees
+     * Returns a boolean indicating if a point lies inside the circle created by origin and radius r
      *
      * @param  origin first Point2D
      * @param  target second Point2D
      * @param  r radius to check target under
-     * @return boolean indicating whether target is under the circle created by origin and radius r
+     * @return boolean indicating whether target is under circle
      * 
      */
 	public boolean inRadius(Point2D origin, Point2D target, double r) {
