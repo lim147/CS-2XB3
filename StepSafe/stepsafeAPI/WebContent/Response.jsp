@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-	The input is: ${param.start} ${param.end}
+	<%
+		String s = request.getParameter("start");
+		String d = request.getParameter("end");
+	%>
+	The input is: s  d
 </body>
 </html>
