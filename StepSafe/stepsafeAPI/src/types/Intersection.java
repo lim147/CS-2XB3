@@ -8,6 +8,8 @@ package types;
  *  @author Meijing Li
  *  @author Robert Vardy
  *  @author Indika Wijesundera
+ *  @version 1.0
+ *  @since 2019-04-03
  */
 
 public class Intersection {
@@ -21,7 +23,6 @@ public class Intersection {
      * @param  Name the name of the intersection
      * @param  x the longitude
      * @param  y the latitude
-     * 
      */
 	public Intersection(String Name, double x, double y) {
 		this.Name = Name;
@@ -33,13 +34,9 @@ public class Intersection {
      *
      * @param  Name the name of the intersection
      * @param  coord a Point2D containing longitude and latitude accordingly
-     * 
      */
 	public Intersection(String Name, Point2D coord) {
 		this.Name = Name;
 		this.location = coord;
-	}
-	
-
-	
+	}	
 }

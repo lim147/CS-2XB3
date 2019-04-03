@@ -2,9 +2,13 @@ package types;
 
 /**
  *  The {@code FundamentalTypes} class holds types to store crime information
- *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
+ *  
+ *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @author Indika Wijesundera
  *  @version 1.0
- *  @since 2019-03-08
+ *  @since 2019-04-03
  */
 
 public class EnumTypes {
@@ -29,11 +33,6 @@ public class EnumTypes {
 	class Hood{
 		int id;
 		String area;
-	}
-	
-	public static void main(String[] args) {
-		System.out.println("Testing Git");
-		// Avocado
 	}
 
 }

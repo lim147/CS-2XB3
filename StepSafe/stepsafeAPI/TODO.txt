@@ -1,0 +1,17 @@
+TODO:
+- test cases
+- documentation
+
+Possible implementations if you feel like doing it:
+- assigning a rating based on the type of crime
+- assigning a rating based on how recent the crime was
+
+TODO List that Alice is currently working on
+1. For loop through list of paths
+2. For loop through path's intersections
+	- Find radius of intersection
+	- Put crimes that fall under the radius into intersection's crimes list
+	- Sort intersection's list by how recent the occurrance is
+	- Find crime rating of intersection
+3. Build digraph where nodes are the intersection and edges are the crime rating
+4. Figure out how to identify the best path from the output from Dijkstras

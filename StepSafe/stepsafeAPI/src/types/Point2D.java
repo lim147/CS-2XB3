@@ -2,7 +2,11 @@ package types;
 
 /**
  *  The {@code Point2D} class holds a data type for a 2D Point/Coordinate
- *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
+ *  
+ *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @author Indika Wijesundera
  *  @version 1.0
  *  @since 2019-03-13
  */
