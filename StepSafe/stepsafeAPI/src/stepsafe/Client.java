@@ -74,7 +74,9 @@ public class Client {
     /**
      * Assigns crime ratings to intersections in paths
      *
-     * @param  list of paths
+     * @param  pathlist list of paths
+     * @param  oList list of relevant crime events
+     * 
      */	
 	
 	public static void optimalPath(List<Path> pathlist, List<Event> oList, Intersection Start, Intersection End){
@@ -96,9 +98,11 @@ public class Client {
 		//Calculate the distance between intersection and crime event, add value to intersection object
 		for (Path p : pathlist) { // For every path in the list
 			List<Intersection> interList = p.getInter(); // get the intersection list from the path
-			for (int i = 0; i < p.getInter().size();i++) { // Iterate through intersections
+			
+			for (int i = 0; i < p.getInter().size();i++) { // Iterate through intersections in cur path
 				
 				Intersection inter = interList.get(i); // current intersection in list
+				
 				for (Event e : oList) {
 					Event copy = new Event(e); // Create a copy of the event
 					copy.distanceTo(inter.getLocation()); // Calculate and store distance from intersection
