@@ -37,4 +37,11 @@ public class Path {
 	public List<Intersection> getInter(){
 		return Inter;
 	}
+	
+    /**
+     * Accessor for the id of the path
+     */
+	public  int getId(){
+		return Id;
+	}
 }

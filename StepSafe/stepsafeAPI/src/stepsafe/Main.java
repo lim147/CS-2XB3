@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import types.CrmALst;
+import notused.CrmALst;
 import types.Event;
 import types.Point2D;
 import types.Path;
@@ -26,7 +25,6 @@ public class Main {
 		
 		Point2D start = new Point2D (0,0); // get this from Rob
 		Point2D end = new Point2D (); // get this from Rob
-		
 		Point2D mid = new Point2D((end.x()+ start.x())/2,(end.y()+start.y())/2);
 		double radius = mid.distanceTo(start)*4;
 		
@@ -34,6 +32,8 @@ public class Main {
 		
 		// list of paths
 		List<Path> Plst = new ArrayList<Path>(); // get this from Rob
+		
+		
 		
 		
 		

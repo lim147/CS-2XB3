@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.princeton.cs.algs4.LinearProbingHashST;
+import edu.princeton.cs.algs4.Digraph;
+
 import types.Point2D;
-import types.CrmALst;
 import types.Event;
 import types.Path;
 import types.Intersection;
@@ -76,52 +77,79 @@ public class Client {
      * @param  list of paths
      */	
 	
-	public static void optimalPath(List<Path> pathlist, List<Event> oList){
+	public static void optimalPath(List<Path> pathlist, List<Event> oList, Intersection Start, Intersection End){
 		
-		// Assign a value to each crime event
-		LinearProbingHashST<String,Integer> crimeId = new LinearProbingHashST<String,Integer>();
-		String[] crimeName = new String[oList.size()];
+		// Assign a value to each intersection and start and end
+		List<Integer> InterPath = new ArrayList<Integer>();
+		InterPath.add(0); // Start identifier
+		InterPath.add(1); // End identifier
 		
 		int interCount = 0; // Total number of intersections in all paths
+		
 		int interIndex = 0; // Intersection index
 		double interDistTotal=0; // Accumulation of distance from crime events
 		
-		Intersection start = pathlist.get(0).getInter().get(0); // Start node
-		start.setId(interIndex); // Index of start node is 0
-		interIndex+=1;
+		interIndex+=1; // index of start
+		interIndex+=1; // index of end
 		
-		Intersection end = pathlist.get(0).getInter().get(-1); // End node //CHECK
 		
+		//Calculate the distance between intersection and crime event, add value to intersection object
 		for (Path p : pathlist) { // For every path in the list
 			List<Intersection> interList = p.getInter(); // get the intersection list from the path
 			for (int i = 0; i < p.getInter().size();i++) { // Iterate through intersections
 				
-				Intersection inter = interList.get(i); // Intersection in list
-				
-				
+				Intersection inter = interList.get(i); // current intersection in list
 				for (Event e : oList) {
 					Event copy = new Event(e); // Create a copy of the event
 					copy.distanceTo(inter.getLocation()); // Calculate and store distance from intersection
 					inter.addCrm(e); // add crime to intersection list
 					interDistTotal+= copy.getdistTo();
+					
 				}
-			inter.setCrimeDst(interDistTotal); // Set the intersection crime distance value
-			interDistTotal=0; // reset the intersection distance accumulator
-			interCount+=1;
+				InterPath.add(p.getId()); // For each intersection, the id is the path it is in
+				inter.setCrimeDst(interDistTotal); // Set the intersection crime distance value
+				inter.setId(interIndex); // Set intersection id to path id
+				
+				interDistTotal=0; // reset the intersection distance accumulator
+				interCount+=1; // Total number of intersections 
 			}
-			interCount-=2; // subtract the beginning and end intersections, which will be added later
 		}
 		
-		
-		interCount+=2; // Add the beginning and end intersections to count
 		//Edge weighted intersection graph
 		EdgeWeightedDigraph interGraph = new EdgeWeightedDigraph(interCount);
+		
+
+		//Connect the paths
+		for (Path p : pathlist) { // For every path in the list
+			List<Intersection> interList = p.getInter(); // get the intersection list from the path
+			
+			//Connect start and first intersection
+			 interGraph.addEdge(new DirectedEdge(0,interList.get(0).getId(),0));
+			 
+			for (int i = 0; i < p.getInter().size()-1;i++) { // Iterate through intersections
+				
+				Intersection inter1 = interList.get(i); // current intersection in list
+				Intersection inter2 = interList.get(i+1); // next intersection in list
+				
+				interGraph.addEdge(new DirectedEdge(inter1.getId(), inter2.getId(), inter1.getCrimeDst()));
+			}
+			//Connect last intersection and end
+			Intersection last = interList.get(p.getInter().size()-1); 
+			interGraph.addEdge(new DirectedEdge(last.getId(),1,last.getCrimeDst()));
+		}
+		
+		// Call Dijkstra's algorithm to get cost-effective path
+
+		DijkstraSP sPath = new DijkstraSP(interGraph,0);
+		Iterable<DirectedEdge> sonePath = sPath.pathTo(1);
+		
+		// Print out cost-effective path
+		for (DirectedEdge a : sonePath) {
+			System.out.print(a);
+		}
+		
 	}
-	
-	public double count(Point2D point) {
-		return 0;
-	}
-	
+
 	
 	
 }

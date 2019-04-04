@@ -58,10 +58,19 @@ public class Intersection {
     /**
      * Sets the crimeDst value
      *
-     * @param  value is the crime Dst value calculated
+     * @param  value is the crime rating value
      */
 	public void setCrimeDst(double value) {
 		crimeDst = value;
+	}
+	
+    /**
+     * Gets the crimeDst value
+     *
+     *@return the crime rating value
+     */
+	public double getCrimeDst() {
+		return crimeDst;
 	}
 	
     /**
@@ -71,6 +80,15 @@ public class Intersection {
      */
 	public void setId(int value) {
 		id = value;
+	}
+	
+    /**
+     * Gets the id value
+     *
+     * @return  id value of intersection
+     */
+	public int getId() {
+		return id;
 	}
 	
     /**
