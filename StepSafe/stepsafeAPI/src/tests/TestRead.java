@@ -26,11 +26,14 @@ import stepsafe.Client;
 import types.Event;
 import types.Point2D;
 import types.Path;
+import types.Intersection;
 
 public class TestRead {
 
+	List<Event> dbase;
 	@Before
 	public void setUp() throws Exception {
+		
 	}
 
 	@After
@@ -51,7 +54,8 @@ public class TestRead {
 	}
 	
 	public void testFilter() {		
-		List<Event> dbase = new ArrayList<Event>();
+
+		dbase = new ArrayList<Event>();
 		Event crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(0,0),2.0);
 		Event crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(1,0),3.0);
 		Event crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(43,49),4.0);
@@ -78,14 +82,13 @@ public class TestRead {
 	}
 	
 	public void testPath(){
+		Intersection start = new Intersection("Start",0,0,"Start here");
+		Intersection end = new Intersection("End",0,0,"End here");
+		
+		Intersection i1 = new Intersection("i1",)
 		Path path1 = new Path(1);
 		Path path2 = new Path(2);
-		
 		Path path3 = new Path(3);
-		Path path4 = new Path(4);
-		
-		Path path5 = new Path(5);
-		Path path6 = new Path(6);
 		
 		//List<Path> testPathList = new ArrayList<Path>();
 		//testPathList.add();
