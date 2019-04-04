@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import types.*;
+
 public class test {	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
 		Process p = Runtime.getRuntime().exec(
-				"python3 hello_world.py " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
+				"python py_scripts\\hello_world.py " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
 		p.waitFor();
 		
 		ArrayList<Path> result = new ArrayList();
@@ -19,17 +20,16 @@ public class test {
 			while ((line = br.readLine()) != null) {
 				if (line.equals("new path")) {
 					result.add(route); //add the route to result list
-					System.out.println("debug");
 					route = new Path(); //reinitialize the route
 				}
 				
 				else {
-					String [] holder = line.split("");
+					String [] holder = line.split(",");
 					double x = Double.parseDouble(holder[0]);
 					double y = Double.parseDouble(holder[1]);
 					String str = holder[2];
 					Intersection e = new Intersection(x, y, str); //create new intersection
-					System.out.println(e.toString());
+
 					route.addIntersection(e);
 				}
 			}
