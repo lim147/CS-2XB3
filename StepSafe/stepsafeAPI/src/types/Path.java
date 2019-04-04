@@ -17,7 +17,7 @@ import java.util.List;
 public class Path {
 	
 	private final int Id;
-	private List<Intersection> Inter;
+	private ArrayList<Intersection> Inter;
 	private double rating;
 	
     /**
@@ -34,7 +34,7 @@ public class Path {
     /**
      * Accessor for the array of intersections
      */
-	public List<Intersection> getInter(){
+	public ArrayList<Intersection> getInter(){
 		return Inter;
 	}
 	
@@ -44,4 +44,9 @@ public class Path {
 	public  int getId(){
 		return Id;
 	}
+	
+	public int size() {
+		return Inter.size();
+	}
+	
 }
