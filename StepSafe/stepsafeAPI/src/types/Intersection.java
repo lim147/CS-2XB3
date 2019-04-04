@@ -19,6 +19,7 @@ public class Intersection {
 	private int id;
 	private final Point2D location;
 	private double crimeDst; // TODO: calls a function to find average crime distance
+	private String instruction;
 	private List<Event> crmLst;
 	
     /**
@@ -28,9 +29,10 @@ public class Intersection {
      * @param  x the longitude
      * @param  y the latitude
      */
-	public Intersection(String Name, double x, double y) {
+	public Intersection(String Name, double x, double y, String instruction) {
 		this.Name = Name;
 		this.location = new Point2D(x,y);
+		this.instruction = instruction;
 	}
 
     /**
@@ -108,10 +110,17 @@ public class Intersection {
 	public Point2D getLocation() {
 		return location;
 	}
-
+	
+	
+	public String getInstruction() {
+		return instruction;
+	}
+	
+	
 	public void addCrm(Event e) {
 		crmLst.add(e);
 	}
+	
 	
 
 }
