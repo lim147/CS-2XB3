@@ -31,8 +31,25 @@ import types.Intersection;
 public class TestRead {
 
 	List<Event> dbase;
+	Event crime1;
+	Event crime2;
+	Event crime3;
+	Event crime4;
+	Event crime5;
+	
 	@Before
 	public void setUp() throws Exception {
+		
+		dbase = new ArrayList<Event>();
+		crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(0,0),2.0);
+		crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(1,0),3.0);
+		crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(43,49),4.0);
+		crime4 = new Event("4", 2016, "April", 15, 8, "Description", new Point2D(0,3),2.0);
+		
+		dbase.add(crime1);
+		dbase.add(crime2);
+		dbase.add(crime3);
+		dbase.add(crime4);
 		
 	}
 
@@ -54,18 +71,6 @@ public class TestRead {
 	}
 	
 	public void testFilter() {		
-
-		dbase = new ArrayList<Event>();
-		Event crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(0,0),2.0);
-		Event crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(1,0),3.0);
-		Event crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(43,49),4.0);
-		Event crime4 = new Event("4", 2016, "April", 15, 8, "Description", new Point2D(0,3),2.0);
-		
-		dbase.add(crime1);
-		dbase.add(crime2);
-		dbase.add(crime3);
-		dbase.add(crime4);
-		
 		Point2D start = new Point2D (-3,0); 
 		Point2D end = new Point2D (3,0); 
 		
@@ -82,13 +87,52 @@ public class TestRead {
 	}
 	
 	public void testPath(){
-		Intersection start = new Intersection("Start",0,0,"Start here");
-		Intersection end = new Intersection("End",0,0,"End here");
+		Intersection start = new Intersection(0,0,"Start here");
+		Intersection end = new Intersection(0,0,"End here");
 		
-		Intersection i1 = new Intersection("i1",)
-		Path path1 = new Path(1);
-		Path path2 = new Path(2);
-		Path path3 = new Path(3);
+		Intersection i1 = new Intersection(0,2,"turn right");
+		Intersection i2 = new Intersection(4,2,"turn right");
+		Path path1 = new Path();
+		path1.addIntersection(start);
+		path1.addIntersection(i1);
+		path1.addIntersection(i2);
+		path1.addIntersection(end);
+		
+		Intersection i3 = new Intersection(2,0,"turn right");
+		Intersection i4 = new Intersection(2,4,"turn right");
+		Path path2 = new Path();
+		path2.addIntersection(start);
+		path2.addIntersection(i3);
+		path2.addIntersection(i4);
+		path2.addIntersection(end);
+		
+		Intersection i5 = new Intersection(2,0,"turn right");
+		Intersection i6 = new Intersection(4,0,"turn right");
+		Intersection i7 = new Intersection(4,2,"turn right");
+		Path path3 = new Path();
+		path3.addIntersection(start);
+		path3.addIntersection(i5);
+		path3.addIntersection(i6);
+		path3.addIntersection(i7);
+		path3.addIntersection(end);
+		
+		List<Path> pathL = new ArrayList<Path>();
+		pathL.add(path1);
+		pathL.add(path2);
+		pathL.add(path3);
+		
+		List<Event> dbase2 = new ArrayList<Event>();
+		crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(1,1),1.0);
+		crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(0,3),1.0);
+		crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(1,3),1.0);
+		crime4 = new Event("4", 2016, "April", 15, 8, "Description", new Point2D(1,4),1.0);
+		crime5 = new Event("5", 2016, "April", 15, 8, "Description", new Point2D(2,3),1.0);
+		
+		dbase2.add(crime1);
+		dbase2.add(crime2);
+		dbase2.add(crime3);
+		dbase2.add(crime4);
+		dbase2.add(crime5);
 		
 		//List<Path> testPathList = new ArrayList<Path>();
 		//testPathList.add();

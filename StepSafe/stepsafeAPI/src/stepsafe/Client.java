@@ -82,24 +82,21 @@ public class Client {
 	public static void optimalPath(List<Path> pathlist, List<Event> oList, Intersection Start, Intersection End){
 		
 		// Assign a value to each intersection and start and end
-		List<Integer> InterPath = new ArrayList<Integer>();
-		InterPath.add(0); // Start identifier
-		InterPath.add(1); // End identifier
+		//List<Integer> InterPath = new ArrayList<Integer>();
+		//InterPath.add(0); // Start identifier
+		//InterPath.add(1); // End identifier
 		
 		int interCount = 0; // Total number of intersections in all paths
 		
-		int interIndex = 0; // Intersection index
+		int interIndex = 2; // Intersection index
 		double interDistTotal=0; // Accumulation of distance from crime events
-		
-		interIndex+=1; // index of start
-		interIndex+=1; // index of end
-		
 		
 		//Calculate the distance between intersection and crime event, add value to intersection object
 		for (Path p : pathlist) { // For every path in the list
 			List<Intersection> interList = p.getInter(); // get the intersection list from the path
 			
-			for (int i = 0; i < p.getInter().size();i++) { // Iterate through intersections in cur path
+			// skip the first and last intersections in the list
+			for (int i = 1; i < p.getInter().size()-1;i++) { // Iterate through intersections in cur path
 				
 				Intersection inter = interList.get(i); // current intersection in list
 				
@@ -108,12 +105,13 @@ public class Client {
 					copy.distanceTo(inter.getLocation()); // Calculate and store distance from intersection
 					inter.addCrm(e); // add crime to intersection list
 					interDistTotal+= copy.getdistTo();
-					
 				}
-				InterPath.add(p.getId()); // For each intersection, the id is the path it is in
+
 				inter.setCrimeDst(interDistTotal); // Set the intersection crime distance value
-				inter.setId(interIndex); // Set intersection id to path id
+				inter.setId(interIndex); // Set intersection id to id
 				
+				//InterPath.add(p.getId()); // For each intersection, the id is the path it is in
+				interIndex+=1;
 				interDistTotal=0; // reset the intersection distance accumulator
 				interCount+=1; // Total number of intersections 
 			}
@@ -128,9 +126,9 @@ public class Client {
 			List<Intersection> interList = p.getInter(); // get the intersection list from the path
 			
 			//Connect start and first intersection
-			 interGraph.addEdge(new DirectedEdge(0,interList.get(0).getId(),0));
+			interGraph.addEdge(new DirectedEdge(0,interList.get(0).getId(),0));
 			 
-			for (int i = 0; i < p.getInter().size()-1;i++) { // Iterate through intersections
+			for (int i = 1; i < p.getInter().size()-1;i++) { // Iterate through intersections
 				
 				Intersection inter1 = interList.get(i); // current intersection in list
 				Intersection inter2 = interList.get(i+1); // next intersection in list
@@ -138,7 +136,7 @@ public class Client {
 				interGraph.addEdge(new DirectedEdge(inter1.getId(), inter2.getId(), inter1.getCrimeDst()));
 			}
 			//Connect last intersection and end
-			Intersection last = interList.get(p.getInter().size()-1); 
+			Intersection last = interList.get(interList.size()-2); 
 			interGraph.addEdge(new DirectedEdge(last.getId(),1,last.getCrimeDst()));
 		}
 		
