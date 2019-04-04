@@ -45,4 +45,11 @@ public class Path {
 		return Inter.size();
 	}
 	
+	public String toString() {
+		String s = "";
+		for (int i = 0; i < size(); i++)
+			s += Inter.get(i) + "\n";
+		return s;
+	}
+	
 }

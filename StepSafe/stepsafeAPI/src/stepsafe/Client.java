@@ -81,6 +81,7 @@ public class Client {
 	
 	public static void optimalPath(List<Path> pathlist, List<Event> oList, Intersection Start, Intersection End){
 		
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		// Assign a value to each intersection and start and end
 		//List<Integer> InterPath = new ArrayList<Integer>();
 		//InterPath.add(0); // Start identifier
@@ -99,6 +100,7 @@ public class Client {
 			for (int i = 1; i < p.getInter().size()-1;i++) { // Iterate through intersections in cur path
 				
 				Intersection inter = interList.get(i); // current intersection in list
+				System.out.println(inter);
 				
 				for (Event e : oList) {
 					Event copy = new Event(e); // Create a copy of the event

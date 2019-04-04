@@ -109,6 +109,11 @@ public class Intersection {
 		crmLst.add(e);
 	}
 	
+	public String toString() {
+		String s = location.toString() + " " + instruction;
+		return s;
+	}
+	
 	
 
 }

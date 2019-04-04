@@ -61,6 +61,7 @@ public class TestRead {
 	public void test() {
 		//fail("Not yet implemented");
 		//testFilter();
+		testPath();
 	}
 	
 	public void testEvent(){
@@ -133,6 +134,9 @@ public class TestRead {
 		dbase2.add(crime3);
 		dbase2.add(crime4);
 		dbase2.add(crime5);
+		System.out.println("hi");
+		
+		Client.optimalPath(pathL,dbase2,start,end);
 		
 		//List<Path> testPathList = new ArrayList<Path>();
 		//testPathList.add();
