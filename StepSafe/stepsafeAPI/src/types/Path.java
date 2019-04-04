@@ -26,9 +26,9 @@ public class Path {
      * @param  Id the Id of the path
      * @param  Inter a list of Point2D
      */
-	public Path(int Id) {
+	public Path(int Id, ArrayList<Intersection> aList) {
 		this.Id = Id;
-		this.Inter = new ArrayList<Intersection>();
+		this.Inter = aList;
 	}
 	
     /**
