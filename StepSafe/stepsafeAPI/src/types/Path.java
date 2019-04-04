@@ -17,7 +17,7 @@ import java.util.List;
 public class Path {
 	
 	private final int Id;
-	private List<Point2D> Inter;
+	private List<Intersection> Inter;
 	private double rating;
 	
     /**
@@ -28,6 +28,13 @@ public class Path {
      */
 	public Path(int Id, double Inter) {
 		this.Id = Id;
-		this.Inter = new ArrayList<Point2D>();
+		this.Inter = new ArrayList<Intersection>();
+	}
+	
+    /**
+     * Accessor for the array of intersections
+     */
+	public List<Intersection> getInter(){
+		return Inter;
 	}
 }

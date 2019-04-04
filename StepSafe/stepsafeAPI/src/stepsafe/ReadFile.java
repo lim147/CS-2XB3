@@ -20,7 +20,7 @@ import types.Event;
 import types.Point2D;
 
 public class ReadFile {
-	public static void read_from_db(CrmALst dbase) throws NumberFormatException, IOException {
+	public static void read_from_db(List<Event> dbase) throws NumberFormatException, IOException {
 		
 		//read from database
 		File f = new File("Dataset/MCI_2014_to_2017.csv");
@@ -35,7 +35,7 @@ public class ReadFile {
 			}
 			String[] temp = line.split(",");
 			Event e = new Event(temp[0], Integer.parseInt(temp[2]), temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[7]), temp[8], new Point2D(Double.parseDouble(temp[12]), Double.parseDouble(temp[13])));
-			dbase.addEvent(e);
+			dbase.add(e);
 			count++;
 		}
 		fr.close();

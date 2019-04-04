@@ -1,5 +1,7 @@
 package types;
 
+import java.util.List;
+
 /**
  *  The {@code Intersection} class represents a ADT for an Intersection at some coordinate location
  *  Dependencies: Point2D.java
@@ -14,8 +16,10 @@ package types;
 
 public class Intersection {
 	private final String Name;
+	private int id;
 	private final Point2D location;
 	private double crimeDst; // TODO: calls a function to find average crime distance
+	private CrmALst crimeLst;
 	
     /**
      * Constructor for an intersection that takes Name, and coordinates as two doubles
@@ -38,5 +42,14 @@ public class Intersection {
 	public Intersection(String Name, Point2D coord) {
 		this.Name = Name;
 		this.location = coord;
-	}	
+	}
+
+    /**
+     * Sets the crimeDst value
+     *
+     * @param  value is the crime Dst value calculated
+     */
+	public void setCrimeDst(double value) {
+		crimeDst = value;
+	}
 }

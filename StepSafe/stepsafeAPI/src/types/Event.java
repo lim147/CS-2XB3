@@ -156,6 +156,6 @@ public class Event implements Comparable<Event>{
 	 * @return String format of the Event
 	 */
 	public String toString() {
-		return String.format("%s, %s %d %d : %d, %s, %s",Id, Month, Day, Year, Hour, MCI, Coord);
+		return String.format("Id: %s, Date: %s %d %d : %d, MCI: %s, Coord: %s",Id, Month, Day, Year, Hour, MCI, Coord);
 	}
 }

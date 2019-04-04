@@ -1,9 +1,14 @@
 package stepsafe;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import types.Point2D;
 import types.CrmALst;
 import types.Event;
+import types.Path;
+import types.Intersection;
 
 /**
  *  The {@code Client class interfaces with various classes as well as web application and Google Maps API
@@ -26,7 +31,6 @@ public class Client {
 		end = e;
 	}
 	
-
     /**
      * Filters through a list of crimes, and returns a list where the crimes fall under the radius of a target Point2D
      * 1 mile =1.609 kilometers
@@ -39,14 +43,13 @@ public class Client {
      * @return a new filtered CrmAList
      * 
      */
-	public CrmALst filterCrimes (CrmALst oList, Point2D origin , double r) {
-		CrmALst cList = new CrmALst();
-		oList.start();
+	public static List<Event> filterCrimes (List<Event> oList, Point2D origin , double r) {
+		List<Event> cList = new ArrayList<Event>();
 		
-		while (oList.end() == false) {
-			Event tEvent = oList.next();
+		for (int i = 0; i < oList.size(); i++) {
+			Event tEvent = oList.get(i);
 			if (inRadius(origin, tEvent.getPoint2D(),r))
-				cList.addEvent(tEvent);
+				cList.add(tEvent);
 		}
 		return cList;
 		
@@ -59,18 +62,36 @@ public class Client {
      * @param  target second Point2D
      * @param  r radius to check target under
      * @return boolean indicating whether target is under circle
-     * 
      */
-	public boolean inRadius(Point2D origin, Point2D target, double r) {
+	public static boolean inRadius(Point2D origin, Point2D target, double r) {
 		if (origin.distanceTo(target) < r)
 			return true;
 		else
 			return false;
 	}
 	
+    /**
+     * Assigns crime ratings to intersections in paths
+     *
+     * @param  list of paths
+     */	
+	/**
+	public static List<Path> optimalPath(List<Path> pathlist, List<Event> oList){
+
+		for (Path p : pathlist) {
+			List<Intersection> interList = p.getInter();
+			for (int i = 0; i < p.getInter().size();i++) {
+				for (Event e : oList) {
+					
+				}
+			}
+		}
+	}**/
+	
 	public double count(Point2D point) {
 		return 0;
 	}
+	
 	
 	
 }

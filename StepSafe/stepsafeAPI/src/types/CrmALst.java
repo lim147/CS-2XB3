@@ -42,6 +42,26 @@ public class CrmALst {
 	public void start() {
 		i = 0;
 	}
+
+    /**
+     * Mutator where an event at an index is set to be another event
+     * 
+     * @param index the index of the array to be changed
+     * @param e the event to be put into the array at the index given
+     */
+	public void set(int index, Event e) {
+		lst.add(index, e);
+	}
+
+    /**
+     * Accessor to event in the list
+     * 
+     * @param index the index of the event desired
+     * @return event at the index provided
+     */
+	public Event get(int index) {
+		return lst.get(index);
+	}
 	
     /**
      * Accessor that gets the array item at current index value
@@ -74,5 +94,27 @@ public class CrmALst {
 			return true;
 		else
 			return false;
-	}	
+	}
+
+    /**
+     * Prints out events in the event list
+     */
+	public void print() {
+		for (Event x : this.lst) {
+			System.out.println(x);
+		}
+	}
+
+    /**
+     * Checks to see if the event is in the event list
+     *
+     * @return boolean indicating if event is in the list 
+     */
+	public boolean elm(Event x) {
+		for (Event y: this.lst) {
+			if (x == y)
+				return true;
+		}
+		return false;
+	}
 }
