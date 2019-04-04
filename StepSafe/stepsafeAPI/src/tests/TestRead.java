@@ -25,6 +25,7 @@ import notused.CrmALst;
 import stepsafe.Client;
 import types.Event;
 import types.Point2D;
+import types.Path;
 
 public class TestRead {
 
@@ -74,5 +75,20 @@ public class TestRead {
 		assert(fList.contains(crime2) == true);
 		assert(fList.contains(crime3) == false);
 		assert(fList.contains(crime4) == true);
+	}
+	
+	public void testPath(){
+		Path path1 = new Path(1);
+		Path path2 = new Path(2);
+		
+		Path path3 = new Path(3);
+		Path path4 = new Path(4);
+		
+		Path path5 = new Path(5);
+		Path path6 = new Path(6);
+		
+		//List<Path> testPathList = new ArrayList<Path>();
+		//testPathList.add();
+		
 	}
 }
