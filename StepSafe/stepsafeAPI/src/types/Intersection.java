@@ -15,7 +15,6 @@ import java.util.List;
  */
 
 public class Intersection {
-	private final String Name;
 	private int id;
 	private final Point2D location;
 	private double crimeDst; // TODO: calls a function to find average crime distance
@@ -29,8 +28,7 @@ public class Intersection {
      * @param  x the longitude
      * @param  y the latitude
      */
-	public Intersection(String Name, double x, double y, String instruction) {
-		this.Name = Name;
+	public Intersection(double x, double y, String instruction) {
 		this.location = new Point2D(x,y);
 		this.instruction = instruction;
 	}
@@ -93,15 +91,7 @@ public class Intersection {
 		return id;
 	}
 	
-    /**
-     * Accesses the name value
-     *
-     * @return the name of the intersection
-     */
-	public String getName() {
-		return Name;
-	}
-	
+    
     /**
      * Accesses the location value
      *
