@@ -23,6 +23,7 @@ public class Event implements Comparable<Event>{
 	private final String MCI;
 	private double distTo;
 	private final Point2D Coord;
+	private final double Degree;
 	
    /**
     * Constructor of Event class 
@@ -35,7 +36,7 @@ public class Event implements Comparable<Event>{
     * @param  MCI the MCI of the event 
     * @param  Coord the coordinates of the point
     */
-	public Event(String Id, int Year, String Month, int Day, int Hour, String MCI, Point2D Coord) {
+	public Event(String Id, int Year, String Month, int Day, int Hour, String MCI, Point2D Coord, Double Degree) {
 		this.Id = Id;
 		this.Year = Year;
 		this.Month = Month;
@@ -43,6 +44,29 @@ public class Event implements Comparable<Event>{
 		this.Hour = Hour;
 		this.MCI = MCI;
 		this.Coord = Coord;
+		this.Degree = Degree;
+	}
+	
+	   /**
+	    * Constructor of Event class 
+	    *
+	    * @param  Id the id of the event
+	    * @param  Year the year of the event
+	    * @param  Month the month of the event
+	    * @param  Day the day of the event 
+	    * @param  Hour the hour of the event 
+	    * @param  MCI the MCI of the event 
+	    * @param  Coord the coordinates of the point
+	    */
+	public Event(Event e) {
+		this.Id = e.getId();
+		this.Year = e.getYear();
+		this.Month = e.getMonth();
+		this.Day = e.getDay();
+		this.Hour = e.getHour();
+		this.MCI = e.getMCI();
+		this.Coord = e.getPoint2D();
+		this.Degree = e.getDegree();
 	}
 	
 	/**
@@ -50,10 +74,11 @@ public class Event implements Comparable<Event>{
 	 * 
 	 * @param x the event to calculate the distance to
 	 */
-	public void distanceTo(Event x) {
-		double xdist = (this.Coord.x() - x.Coord.x());
-		double ydist = (this.Coord.y() - x.Coord.y());
+	public void distanceTo(Point2D x) {
+		double xdist = (this.Coord.x() - x.x());
+		double ydist = (this.Coord.y() - x.y());
 		this.distTo = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
+		this.distTo*=this.Degree;
 	}
 	
 	/**
@@ -148,6 +173,24 @@ public class Event implements Comparable<Event>{
 	 */
 	public Point2D getPoint2D() {
 		return this.Coord;
+	}
+
+	/**
+	 * Accessor for the Degree of the crime
+	 * 
+	 * @return degree of the cime
+	 */
+	public double getDegree() {
+		return this.Degree;
+	}
+	
+	/**
+	 * Accessor for the distance to a Point2D
+	 * 
+	 * @return distance to a Point2D
+	 */
+	public double getdistTo() {
+		return this.distTo;
 	}
 	
 	/**

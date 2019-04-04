@@ -19,7 +19,7 @@ public class Intersection {
 	private int id;
 	private final Point2D location;
 	private double crimeDst; // TODO: calls a function to find average crime distance
-	private CrmALst crimeLst;
+	private List<Event> crmLst;
 	
     /**
      * Constructor for an intersection that takes Name, and coordinates as two doubles
@@ -43,6 +43,17 @@ public class Intersection {
 		this.Name = Name;
 		this.location = coord;
 	}
+	
+    /**
+     * Initializes a new Intersection that is a deep copy of specified Intersection
+     *
+     * @param  Name the name of the intersection
+     * @param  coord a Point2D containing longitude and latitude accordingly
+     */
+	public Intersection(Intersection i) {
+		this.Name = i.getName();
+		this.location = i.getLocation();
+	}
 
     /**
      * Sets the crimeDst value
@@ -52,4 +63,37 @@ public class Intersection {
 	public void setCrimeDst(double value) {
 		crimeDst = value;
 	}
+	
+    /**
+     * Sets the id value
+     *
+     * @param  id value of intersection
+     */
+	public void setId(int value) {
+		id = value;
+	}
+	
+    /**
+     * Accesses the name value
+     *
+     * @return the name of the intersection
+     */
+	public String getName() {
+		return Name;
+	}
+	
+    /**
+     * Accesses the location value
+     *
+     * @return the name of the intersection
+     */
+	public Point2D getLocation() {
+		return location;
+	}
+
+	public void addCrm(Event e) {
+		crmLst.add(e);
+	}
+	
+
 }

@@ -31,8 +31,8 @@ public class PlotCrime { //test
         StdDraw.setPenColor(StdDraw.BLUE);
 		Point2D s = new Point2D(0.4,0.4);
 		Point2D e = new Point2D(0.8,0.8);
-		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", new Point2D(0.5,0.5));
-		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", new Point2D(0.6,0.6));
+		Event rob = new Event("1", 1, "Jan", 1, 1, "Hello", new Point2D(0.5,0.5),2.0);
+		Event zach = new Event("2", 2, "Jan", 2, 2, "Hello", new Point2D(0.6,0.6),3.0);
 		Event[] list = new Event[2];
 		list[0] = rob;
 		list[1] = zach;

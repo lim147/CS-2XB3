@@ -28,13 +28,28 @@ public class ReadFile {
 		BufferedReader br = new BufferedReader(fr);
 		String line;
 		int count = 0;
+		double deg = 0;
 		while ((line = br.readLine()) != null) {
 			if (count == 0){
 				count++;
 				continue;
 			}
 			String[] temp = line.split(",");
-			Event e = new Event(temp[0], Integer.parseInt(temp[2]), temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[7]), temp[8], new Point2D(Double.parseDouble(temp[12]), Double.parseDouble(temp[13])));
+			
+			if (temp[8] == "Assault")
+				deg = 1;
+			else if (temp[8] == "Break and Enter")
+				deg = 2;
+			else if (temp[8] == "Robbery")
+				deg = 3;
+			else if (temp[8] == "Theft Over")
+				deg = 2;
+			else if (temp[8] == "Auto Theft")
+				deg = 1;
+			else
+				throw new IllegalArgumentException("MCI not matched");
+				
+			Event e = new Event(temp[0], Integer.parseInt(temp[2]), temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[7]), temp[8], new Point2D(Double.parseDouble(temp[12]), Double.parseDouble(temp[13])),deg);
 			dbase.add(e);
 			count++;
 		}

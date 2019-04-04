@@ -43,18 +43,18 @@ public class TestRead {
 	}
 	
 	public void testEvent(){
-		Event crime1 = new Event("1", 1, "Jan", 1, 1, "Description", new Point2D(0,0));
-		Event crime2 = new Event("2", 2, "Jan", 2, 2, "Description", new Point2D(1,0));
+		Event crime1 = new Event("1", 1, "Jan", 1, 1, "Description", new Point2D(0,0),2.0);
+		Event crime2 = new Event("2", 2, "Jan", 2, 2, "Description", new Point2D(1,0),2.0);
 		System.out.println(crime1.getDay());
 		System.out.println(crime2.toString());		
 	}
 	
 	public void testFilter() {		
 		List<Event> dbase = new ArrayList<Event>();
-		Event crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(0,0));
-		Event crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(1,0));
-		Event crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(43,49));
-		Event crime4 = new Event("4", 2016, "April", 15, 8, "Description", new Point2D(0,3));
+		Event crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(0,0),2.0);
+		Event crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(1,0),3.0);
+		Event crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(43,49),4.0);
+		Event crime4 = new Event("4", 2016, "April", 15, 8, "Description", new Point2D(0,3),2.0);
 		
 		dbase.add(crime1);
 		dbase.add(crime2);
@@ -75,7 +75,4 @@ public class TestRead {
 		assert(fList.contains(crime3) == false);
 		assert(fList.contains(crime4) == true);
 	}
-	
-
-
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import types.CrmALst;
 import types.Event;
 import types.Point2D;
@@ -15,6 +16,9 @@ public class Main {
 		//create a CrmALst instance:
 
 		List<Event> dbase = new ArrayList<Event>();
+		//Merge.sortMergeTD(dbase, dbase.size());
+	
+		
 		//apply fuhttps://marketplace.eclipse.org/content/eclipse-java-ee-developer-tools-0nction to load data to dbase:
 		ReadFile.read_from_db(dbase);
 		//dbase.next();
@@ -30,7 +34,6 @@ public class Main {
 		
 		// list of paths
 		List<Path> Plst = new ArrayList<Path>(); // get this from Rob
-		System.out.println("hi");
 		
 		
 		
