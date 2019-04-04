@@ -40,7 +40,6 @@ public class Intersection {
      * @param  coord a Point2D containing longitude and latitude accordingly
      */
 	public Intersection(String Name, Point2D coord) {
-		this.Name = Name;
 		this.location = coord;
 	}
 	
@@ -51,7 +50,6 @@ public class Intersection {
      * @param  coord a Point2D containing longitude and latitude accordingly
      */
 	public Intersection(Intersection i) {
-		this.Name = i.getName();
 		this.location = i.getLocation();
 	}
 
