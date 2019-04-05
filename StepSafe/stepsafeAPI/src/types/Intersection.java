@@ -1,6 +1,8 @@
 package types;
 
-import java.util.List;
+import java.util.ArrayList;
+
+import stepsafe.Merge;
 
 /**
  *  The {@code Intersection} class represents a ADT for an Intersection at some coordinate location
@@ -17,9 +19,9 @@ import java.util.List;
 public class Intersection {
 	private int id;
 	private final Point2D location;
-	private double crimeDst; // TODO: calls a function to find average crime distance
+	private double crimeDst; 
 	private String instruction;
-	private List<Event> crmLst;
+	private ArrayList<Event> crmLst;
 	
     /**
      * Constructor for an intersection that takes Name, and coordinates as two doubles
@@ -31,6 +33,7 @@ public class Intersection {
 	public Intersection(double x, double y, String instruction) {
 		this.location = new Point2D(x,y);
 		this.instruction = instruction;
+		crmLst = new ArrayList<Event>();
 	}
 
     /**
@@ -72,6 +75,15 @@ public class Intersection {
 	}
 	
     /**
+     * Sorts the Crm List
+     *
+     *@return the crime rating value
+     */
+	public void sortCrm(){
+
+	}
+	
+    /**
      * Sets the id value
      *
      * @param  id value of intersection
@@ -99,16 +111,29 @@ public class Intersection {
 		return location;
 	}
 	
-	
+    /**
+     * Accesses the instruction
+     *
+     * @return the instruction at the intersection
+     */
 	public String getInstruction() {
 		return instruction;
 	}
 	
-	
+    /**
+     * Adds a Crime Event to the Crime Event list
+     *
+     *@param e the crime event to be added to the list
+     */
 	public void addCrm(Event e) {
 		crmLst.add(e);
 	}
 	
+    /**
+     * Prints out the Intersection in a string format
+     *
+     * @return intersection in a string format
+     */
 	public String toString() {
 		String s = location.toString() + " " + instruction;
 		return s;

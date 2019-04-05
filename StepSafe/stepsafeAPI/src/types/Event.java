@@ -79,6 +79,7 @@ public class Event implements Comparable<Event>{
 		double ydist = (this.Coord.y() - x.y());
 		this.distTo = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
 		this.distTo*=this.Degree;
+		this.distTo=1/(this.distTo);
 	}
 	
 	/**

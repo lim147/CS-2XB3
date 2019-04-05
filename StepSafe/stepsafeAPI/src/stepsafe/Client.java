@@ -45,8 +45,8 @@ public class Client {
      * @return a new filtered CrmAList
      * 
      */
-	public static List<Event> filterCrimes (List<Event> oList, Point2D origin , double r) {
-		List<Event> cList = new ArrayList<Event>();
+	public static ArrayList<Event> filterCrimes (ArrayList<Event> oList, Point2D origin , double r) {
+		ArrayList<Event> cList = new ArrayList<Event>();
 		
 		for (int i = 0; i < oList.size(); i++) {
 			Event tEvent = oList.get(i);
@@ -79,16 +79,16 @@ public class Client {
      * 
      */	
 	
-	public static void optimalPath(List<Path> pathlist, List<Event> oList, Intersection Start, Intersection End){
+	public static ArrayList<Intersection> optimalPath(ArrayList<Path> pathlist, ArrayList<Event> oList, Intersection Start, Intersection End){
 		
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		// Assign a value to each intersection and start and end
-		//List<Integer> InterPath = new ArrayList<Integer>();
-		//InterPath.add(0); // Start identifier
-		//InterPath.add(1); // End identifier
+		ArrayList<Intersection> InterPath = new ArrayList<Intersection>();
+		Start.setId(0);
+		End.setId(1);
+		InterPath.add(Start); // Start identifier
+		InterPath.add(End); // End identifier
 		
-		int interCount = 0; // Total number of intersections in all paths
-		
+		int interCount = 2; // Total number of intersections in all paths
 		int interIndex = 2; // Intersection index
 		double interDistTotal=0; // Accumulation of distance from crime events
 		
@@ -100,19 +100,18 @@ public class Client {
 			for (int i = 1; i < p.getInter().size()-1;i++) { // Iterate through intersections in cur path
 				
 				Intersection inter = interList.get(i); // current intersection in list
-				System.out.println(inter);
+
 				
 				for (Event e : oList) {
-					Event copy = new Event(e); // Create a copy of the event
-					copy.distanceTo(inter.getLocation()); // Calculate and store distance from intersection
+					e.distanceTo(inter.getLocation());
 					inter.addCrm(e); // add crime to intersection list
-					interDistTotal+= copy.getdistTo();
+					interDistTotal+=e.getdistTo();
 				}
+				inter.sortCrm();
 
 				inter.setCrimeDst(interDistTotal); // Set the intersection crime distance value
 				inter.setId(interIndex); // Set intersection id to id
-				
-				//InterPath.add(p.getId()); // For each intersection, the id is the path it is in
+				InterPath.add(inter.getId(),inter); // For each intersection, the id is the path it is in
 				interIndex+=1;
 				interDistTotal=0; // reset the intersection distance accumulator
 				interCount+=1; // Total number of intersections 
@@ -122,15 +121,18 @@ public class Client {
 		//Edge weighted intersection graph
 		EdgeWeightedDigraph interGraph = new EdgeWeightedDigraph(interCount);
 		
-
 		//Connect the paths
 		for (Path p : pathlist) { // For every path in the list
-			List<Intersection> interList = p.getInter(); // get the intersection list from the path
+			ArrayList<Intersection> interList = p.getInter(); // get the intersection list from the path
+			
+			//System.out.println(interList.size());
 			
 			//Connect start and first intersection
-			interGraph.addEdge(new DirectedEdge(0,interList.get(0).getId(),0));
+			DirectedEdge e1 = new DirectedEdge(0,interList.get(1).getId(),0);
+			//System.out.println(e1);
+			interGraph.addEdge(e1);
 			 
-			for (int i = 1; i < p.getInter().size()-1;i++) { // Iterate through intersections
+			for (int i = 1; i < p.getInter().size()-2;i++) { // Iterate through intersections
 				
 				Intersection inter1 = interList.get(i); // current intersection in list
 				Intersection inter2 = interList.get(i+1); // next intersection in list
@@ -141,19 +143,22 @@ public class Client {
 			Intersection last = interList.get(interList.size()-2); 
 			interGraph.addEdge(new DirectedEdge(last.getId(),1,last.getCrimeDst()));
 		}
-		
-		// Call Dijkstra's algorithm to get cost-effective path
 
+		// Call Dijkstra's algorithm to get cost-effective path
 		DijkstraSP sPath = new DijkstraSP(interGraph,0);
 		Iterable<DirectedEdge> sonePath = sPath.pathTo(1);
 		
-		// Print out cost-effective path
+		// Add intersections  in the optimal list to an intersection array list
+		ArrayList<Intersection> optPath = new ArrayList<Intersection>();
+		optPath.add(Start);
 		for (DirectedEdge a : sonePath) {
-			System.out.print(a);
+			optPath.add(InterPath.get(a.to()));
 		}
 		
-	}
-
-	
-	
+		
+		for (Intersection e : optPath) {
+			System.out.println(e);
+		}
+		return optPath;
+	}	
 }
