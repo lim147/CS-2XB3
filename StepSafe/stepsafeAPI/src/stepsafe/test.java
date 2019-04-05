@@ -8,6 +8,8 @@ import types.*;
 
 public class test {	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
+		System.out.println(s);
+		System.out.println(t);
 		Process p = Runtime.getRuntime().exec(
 				"python py_scripts\\hello_world.py " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
 		p.waitFor();
@@ -21,6 +23,7 @@ public class test {
 				if (line.equals("new path")) {
 					result.add(route); //add the route to result list
 					route = new Path(); //reinitialize the route
+					System.out.println(line);
 				}
 				
 				else {
@@ -46,11 +49,11 @@ public class test {
 	public static String printToWeb(String s, String t) throws IOException, InterruptedException {
 		ArrayList<Path> temp = generatePaths(s, t);
 		String str = temp.get(0).getInter().get(0).toString();
-		for (int i = 0; i < temp.size(); i++) {
-//			str += temp.get(i).toString() + "\n";
-//			str += "hellos";
-		}
-//		str = "hello";
+//		for (int i = 0; i < temp.size(); i++) {
+////			str += temp.get(i).toString() + "\n";
+////			str += "hellos";
+//		}
+//		String str = s + t;
 		return str;
 	}
 	
@@ -62,15 +65,16 @@ public class test {
 	}
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-//		ArrayList<Path> result = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
-//		for(int i = 0; i < result.size(); i++) {
-//			System.out.println("One path is:");
-//			Path path = result.get(i);
-//			System.out.print(path.toString());
-//		}
+		ArrayList<Path> result = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+		System.out.println(result.size());
+		for(int i = 0; i < result.size(); i++) {
+			System.out.println("One path is:");
+			Path path = result.get(i);
+			System.out.print(path.toString());
+		}
 		
-		String x = printToWeb("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
-		System.out.println(x);
+//		String x = printToWeb("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+//		System.out.println(x);
 	}
 	
 

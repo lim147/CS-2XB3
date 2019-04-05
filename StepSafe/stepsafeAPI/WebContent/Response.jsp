@@ -1,4 +1,4 @@
-<%@page import="stepsafe.test"%>
+<%@page import="stepsafe.test.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
@@ -15,12 +15,9 @@
 	The input is:
 
 	<%
-		out.println("..."+s + "..." + "...");
 	
-		ArrayList<String> test = stepsafe.test.join(s, d);
-		for(int i = 0; i < test.size(); i++){
-			out.println(test.get(i));
-		}
+		String test = stepsafe.test.printToWeb("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+		out.println(test);
 	%>
 
 
