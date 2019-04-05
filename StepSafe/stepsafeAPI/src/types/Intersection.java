@@ -139,6 +139,11 @@ public class Intersection {
 		return s;
 	}
 	
+	public String toWeb() {
+		String s = instruction;
+		return s;
+	}
+	
 	
 
 }

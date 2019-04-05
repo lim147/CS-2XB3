@@ -52,4 +52,11 @@ public class Path {
 		return s;
 	}
 	
+	public String toWeb() {
+		String s = "";
+		for (int i = 0; i < size(); i++)
+			s += Inter.get(i).toWeb() + "<br/>";
+		return s;
+	}
+	
 }
