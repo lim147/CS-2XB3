@@ -9,49 +9,27 @@
 <!DOCTYPE html>
 <html>
 <body>
+	
 	<%
 		String s = request.getParameter("start");
 		String t = request.getParameter("end");
+		out.print("Start:" + "<br/>" + s + "<br/>");
+		out.print("End:" + "<br/>" + t + "<br/>");
 	%>
 
-	The path options are:
 
 	<%
-		Process p = Runtime.getRuntime().exec(
-				"python C:\\Users\\robbi\\Desktop\\Classes\\2XB3\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py "
-						+ s.replace(" ", "+") + " " + t.replace(" ", "+"));
-		p.waitFor();
+		out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
+		
+		ArrayList<Path> result = stepsafe.test.generatePaths(s, t);
 
-		ArrayList<Path> result = new ArrayList();
-		Path route = new Path();
-
-		BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-		String line;
-		while ((line = br.readLine()) != null) {
-			if (line.equals("new path")) {
-				result.add(route); //add the route to result list
-				route = new Path(); //reinitialize the route
-			}
-
-			else {
-				String[] holder = line.split(",");
-				double x = Double.parseDouble(holder[0]);
-				double y = Double.parseDouble(holder[1]);
-				String str = holder[2];
-				Intersection e = new Intersection(x, y, str); //create new intersection
-
-				route.addIntersection(e);
-			}
-		}
-
-		result.add(route); //add last route to result list
-
-		for(int i = 0; i < result.size(); i++){		
+		
+		for(int i = 1; i <= result.size(); i++){		
 			out.print("<br/>");			
 			out.print("Path ");			
 			out.print(i);			
 			out.print("<br/>");			
-			out.println(result.get(i));			
+			out.println(result.get(i-1).toWeb());			
 		}
 	%>
 
