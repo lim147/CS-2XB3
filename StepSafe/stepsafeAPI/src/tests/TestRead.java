@@ -30,7 +30,7 @@ import types.Intersection;
 
 public class TestRead {
 
-	List<Event> dbase;
+	ArrayList<Event> dbase;
 	Event crime1;
 	Event crime2;
 	Event crime3;
@@ -78,7 +78,7 @@ public class TestRead {
 		Point2D mid = new Point2D((end.x()+ start.x())/2,(end.y()+start.y())/2);
 		double radius = mid.distanceTo(start)*4;
 		
-		List<Event> fList = Client.filterCrimes (dbase, mid, radius);
+		ArrayList<Event> fList = Client.filterCrimes (dbase, mid, radius);
 		//fList.print();
 		
 		assert(fList.contains(crime1) == true);
@@ -117,12 +117,12 @@ public class TestRead {
 		path3.addIntersection(i7);
 		path3.addIntersection(end);
 		
-		List<Path> pathL = new ArrayList<Path>();
+		ArrayList<Path> pathL = new ArrayList<Path>();
 		pathL.add(path1);
 		pathL.add(path2);
 		pathL.add(path3);
 		
-		List<Event> dbase2 = new ArrayList<Event>();
+		ArrayList<Event> dbase2 = new ArrayList<Event>();
 		crime1 = new Event("1", 2019, "Jan", 1, 12, "Description", new Point2D(1,1),1.0);
 		crime2 = new Event("2", 2018, "March", 2, 18, "Description", new Point2D(0,3),1.0);
 		crime3 = new Event("3", 2019, "August", 3, 2, "Description", new Point2D(1,3),1.0);
@@ -134,12 +134,7 @@ public class TestRead {
 		dbase2.add(crime3);
 		dbase2.add(crime4);
 		dbase2.add(crime5);
-		System.out.println("hi");
 		
 		Client.optimalPath(pathL,dbase2,start,end);
-		
-		//List<Path> testPathList = new ArrayList<Path>();
-		//testPathList.add();
-		
 	}
 }

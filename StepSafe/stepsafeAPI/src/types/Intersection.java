@@ -1,6 +1,6 @@
 package types;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *  The {@code Intersection} class represents a ADT for an Intersection at some coordinate location
@@ -19,7 +19,7 @@ public class Intersection {
 	private final Point2D location;
 	private double crimeDst; // TODO: calls a function to find average crime distance
 	private String instruction;
-	private List<Event> crmLst;
+	private ArrayList<Event> crmLst;
 	
     /**
      * Constructor for an intersection that takes Name, and coordinates as two doubles
@@ -31,6 +31,7 @@ public class Intersection {
 	public Intersection(double x, double y, String instruction) {
 		this.location = new Point2D(x,y);
 		this.instruction = instruction;
+		crmLst = new ArrayList<Event>();
 	}
 
     /**
