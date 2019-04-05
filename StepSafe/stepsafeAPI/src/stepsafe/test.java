@@ -8,8 +8,8 @@ import types.*;
 
 public class test {	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-		System.out.println(s);
-		System.out.println(t);
+//		System.out.println(s);
+//		System.out.println(t);
 		Process p = Runtime.getRuntime().exec(
 				"python py_scripts\\hello_world.py " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
 		p.waitFor();
