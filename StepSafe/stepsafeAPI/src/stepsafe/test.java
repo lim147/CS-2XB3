@@ -8,10 +8,10 @@ import types.*;
 
 public class test {	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-//		System.out.println(s);
-//		System.out.println(t);
+		String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
+		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
 		Process p = Runtime.getRuntime().exec(
-				"python py_scripts\\hello_world.py " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
+				 cmd + " " + filepath + " " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
 		p.waitFor();
 		
 		ArrayList<Path> result = new ArrayList();
@@ -37,7 +37,6 @@ public class test {
 				}
 			}
 			
-			result.add(route); //add last route to result list
 			
 		}		
 		
@@ -46,16 +45,16 @@ public class test {
 
 	}
 	
-	public static String printToWeb(String s, String t) throws IOException, InterruptedException {
-		ArrayList<Path> temp = generatePaths(s, t);
-		String str = temp.get(0).getInter().get(0).toString();
+//	public static String printToWeb(String s, String t) throws IOException, InterruptedException {
+//		ArrayList<Path> temp = generatePaths(s, t);
+//		String str = temp.get(0).getInter().get(0).toString();
 //		for (int i = 0; i < temp.size(); i++) {
-////			str += temp.get(i).toString() + "\n";
-////			str += "hellos";
+//			str += temp.get(i).toString() + "\n";
+//			str += "hellos";
 //		}
 //		String str = s + t;
-		return str;
-	}
+//		return str;
+//	}
 	
 	public static ArrayList<String> join(String s, String t) {
 		ArrayList<String> x = new ArrayList();
