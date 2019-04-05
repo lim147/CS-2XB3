@@ -12,11 +12,19 @@ public class test {
 		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
 		
 		/*
-		 Rob, Alice:
+		 Alice:
 		 
 		 String cmd = "python";
 		 String filepath = ...; -- The full path of hello_world.py, use pwd to get it.
 		 */
+		
+		/*
+		 Rob:
+		 
+		 String cmd = "python";
+		 String filepath = "C:\\Users\\robbi\\Desktop\\Classes\\2XB3\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py"
+		 */
+		
 		
 		/*
 		 May:
@@ -24,6 +32,7 @@ public class test {
 		 String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
 		 String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
 		 */
+		
 		Process p = Runtime.getRuntime().exec(
 				 cmd + " " + filepath + " " + s.replace(" ", "+") + " " + t.replace(" ", "+"));
 		p.waitFor();
