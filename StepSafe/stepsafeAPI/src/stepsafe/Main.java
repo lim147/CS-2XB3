@@ -17,7 +17,6 @@ public class Main {
 
 		ArrayList<Event> dbase = new ArrayList<Event>();
 		//Merge.sortMergeTD(dbase, dbase.size());
-	
 		
 		//apply fuhttps://marketplace.eclipse.org/content/eclipse-java-ee-developer-tools-0nction to load data to dbase:
 		ReadFile.read_from_db(dbase);
@@ -33,6 +32,5 @@ public class Main {
 		// list of paths
 		ArrayList<Path> Plst = new ArrayList<Path>(); // get this from Rob
 		ArrayList<Intersection> Olst = Client.optimalPath(Plst,fList,s,e);
-		
 	}
 }

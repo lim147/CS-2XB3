@@ -107,6 +107,7 @@ public class Client {
 					inter.addCrm(e); // add crime to intersection list
 					interDistTotal+=e.getdistTo();
 				}
+				inter.sortCrm();
 
 				inter.setCrimeDst(interDistTotal); // Set the intersection crime distance value
 				inter.setId(interIndex); // Set intersection id to id
@@ -120,7 +121,6 @@ public class Client {
 		//Edge weighted intersection graph
 		EdgeWeightedDigraph interGraph = new EdgeWeightedDigraph(interCount);
 		
-
 		//Connect the paths
 		for (Path p : pathlist) { // For every path in the list
 			ArrayList<Intersection> interList = p.getInter(); // get the intersection list from the path
@@ -160,8 +160,5 @@ public class Client {
 			System.out.println(e);
 		}
 		return optPath;
-	}
-
-	
-	
+	}	
 }
