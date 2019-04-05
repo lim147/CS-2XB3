@@ -43,16 +43,34 @@ public class test {
 
 	}
 	
+	public static String printToWeb(String s, String t) throws IOException, InterruptedException {
+		ArrayList<Path> temp = generatePaths(s, t);
+		String str = temp.get(0).getInter().get(0).toString();
+		for (int i = 0; i < temp.size(); i++) {
+//			str += temp.get(i).toString() + "\n";
+//			str += "hellos";
+		}
+//		str = "hello";
+		return str;
+	}
+	
+	public static ArrayList<String> join(String s, String t) {
+		ArrayList<String> x = new ArrayList();
+		x.add(s);
+		x.add(t);
+		return x;
+	}
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		ArrayList<Path> result = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "33 Dundurn St S, Hamilton");
-		for(int i = 0; i < result.size(); i++) {
-			System.out.println("One path is:");
-			Path path = result.get(i);
-			System.out.print(path.toString());
-		}
+//		ArrayList<Path> result = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+//		for(int i = 0; i < result.size(); i++) {
+//			System.out.println("One path is:");
+//			Path path = result.get(i);
+//			System.out.print(path.toString());
+//		}
 		
-		
+		String x = printToWeb("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+		System.out.println(x);
 	}
 	
 

@@ -3,11 +3,11 @@ import json
 import sys
 endpoint = "https://maps.googleapis.com/maps/api/directions/json?"
 api_key = "AIzaSyB2-4HW3uo2_UIR6-XCL5EqvqzucNS1O_I"
-# origin = sys.argv[1].replace(" ", "+")
-origin = "Scotiabank+Arena,+40+Bay+St,+Toronto"
-# destination = sys.argv[2].replace(" ", "+")
-destination = "33+Dundurn+St+S,+Hamilton"
-destination = "Pearson+Airport,+Mississauga"
+origin = sys.argv[1].replace(" ", "+")
+#origin = "Scotiabank+Arena,+40+Bay+St,+Toronto"
+destination = sys.argv[2].replace(" ", "+")
+#destination = "33+Dundurn+St+S,+Hamilton"
+#destination = "Pearson+Airport,+Mississauga"
 nav_request = "origin={}&destination={}&key={}&alternatives=true".format(
     origin, destination, api_key)
 request = endpoint + nav_request
