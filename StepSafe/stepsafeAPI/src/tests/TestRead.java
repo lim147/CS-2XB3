@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import notused.CrmALst;
-import stepsafe.Client;
+import stepsafe.test;
 import types.Event;
 import types.Point2D;
 import types.Path;
@@ -58,7 +59,7 @@ public class TestRead {
 	}
 
 	@Test
-	public void test() {
+	public void test() throws NumberFormatException, IOException {
 		//fail("Not yet implemented");
 		//testFilter();
 		testPath();
@@ -78,7 +79,7 @@ public class TestRead {
 		Point2D mid = new Point2D((end.x()+ start.x())/2,(end.y()+start.y())/2);
 		double radius = mid.distanceTo(start)*4;
 		
-		ArrayList<Event> fList = Client.filterCrimes (dbase, mid, radius);
+		ArrayList<Event> fList = test.filterCrimes (dbase, mid, radius);
 		//fList.print();
 		
 		assert(fList.contains(crime1) == true);
@@ -87,7 +88,7 @@ public class TestRead {
 		assert(fList.contains(crime4) == true);
 	}
 	
-	public void testPath(){
+	public void testPath() throws NumberFormatException, IOException{
 		Intersection start = new Intersection(0,0,"Start here");
 		Intersection end = new Intersection(0,0,"End here");
 		
@@ -135,6 +136,6 @@ public class TestRead {
 		dbase2.add(crime4);
 		dbase2.add(crime5);
 		
-		Client.optimalPath(pathL,dbase2);
+		test.optimalPath(pathL,dbase2);
 	}
 }
