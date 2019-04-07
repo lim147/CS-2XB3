@@ -14,8 +14,8 @@ public class test {
 	public Point2D end;
 	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-		 String cmd = "python";
-		 String filepath = "C:\\Users\\Pieci\\Desktop\\Other\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
+		String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
+		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
 		 
 		/*
 		 Alice:
@@ -87,19 +87,6 @@ public class test {
 		return x;
 	}
 
-	public static void main(String[] args) throws IOException, InterruptedException {
-		ArrayList<Path> result = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
-		System.out.println(result.size());
-		for(int i = 0; i < result.size(); i++) {
-			System.out.println("One path is:");
-			Path path = result.get(i);
-			System.out.print(path.toString());
-		}
-		
-//		String x = printToWeb("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
-//		System.out.println(x);
-	}
-	
 
 	
 	
@@ -151,7 +138,7 @@ public class test {
      * 
      */	
 	
-	public static ArrayList<Intersection> optimalPath(ArrayList<Path> pathlist, ArrayList<Event> dbase) throws NumberFormatException, IOException{
+	public static Path optimalPath(ArrayList<Path> pathlist, ArrayList<Event> dbase) throws NumberFormatException, IOException{
 		
 
 		
@@ -232,17 +219,40 @@ public class test {
 		Iterable<DirectedEdge> sonePath = sPath.pathTo(1);
 		
 		// Add intersections  in the optimal list to an intersection array list
-		ArrayList<Intersection> optPath = new ArrayList<Intersection>();
-		optPath.add(Start);
+		
+		Path optPath = new Path();
+		optPath.addIntersection(Start);
 		for (DirectedEdge a : sonePath) {
-			optPath.add(InterPath.get(a.to()));
+			optPath.addIntersection(InterPath.get(a.to()));
 		}
 		
 		
-		for (Intersection i : optPath) {
-			System.out.println(i);
-		}
+//		for (Intersection i : optPath) {
+//			System.out.println(i);
+//		}
 		return optPath;
+	}
+	
+	
+	public static void main(String[] args) throws IOException, InterruptedException {
+		ArrayList<Path> paths = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+//		System.out.println(paths.size());
+//		for(int i = 0; i < paths.size(); i++) {
+//			System.out.println("One path is:");
+//			Path path = paths.get(i);
+//			System.out.print(path.toString());
+//		}
+//		System.out.println();
+		System.out.println("The optimal path is:");
+		
+		ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
+		ReadFile.read_from_db(dbase);
+		
+		Path optPath = stepsafe.test.optimalPath(paths, dbase);
+		
+		
+		System.out.println(optPath.toString());	
+		
 	}
 	
 
