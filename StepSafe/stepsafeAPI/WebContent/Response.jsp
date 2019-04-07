@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="types.*"%>
+<%@ page import="stepsafe.ReadFile*"%>
 <%@ page import="java.io.BufferedReader"%>
 <%@ page import="java.io.InputStreamReader"%>
 
@@ -22,8 +23,8 @@
 		out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
 		
 		ArrayList<Path> result = stepsafe.test.generatePaths(s, t);
-		//Intersection start;
-		//Intersection end;
+		ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
+		ReadFile.read_from_db(dbase);
 		
 		
 		for(int i = 1; i <= result.size(); i++){		

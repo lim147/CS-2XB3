@@ -151,25 +151,17 @@ public class test {
      * 
      */	
 	
-	public static ArrayList<Intersection> optimalPath(ArrayList<Path> pathlist, ArrayList<Event> oList) throws NumberFormatException, IOException{
+	public static ArrayList<Intersection> optimalPath(ArrayList<Path> pathlist, ArrayList<Event> dbase) throws NumberFormatException, IOException{
 		
-		ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
-		ReadFile.read_from_db(dbase);
 
-		Intersection s = new Intersection(0,0,"start"); // get from Rob
-		Intersection e = new Intersection(0,0,"end"); // get from rob
-		Point2D mid = new Point2D((e.getLocation().x()+ s.getLocation().x())/2,(e.getLocation().y()+s.getLocation().y())/2);
-		double radius = mid.distanceTo(s.getLocation())*4;
-		
-		ArrayList<Event> fList = filterCrimes(dbase, mid, radius);
-		
-		// list of paths
-		ArrayList<Path> Plst = new ArrayList<Path>(); // get this from Rob
-		ArrayList<Intersection> Olst = optimalPath(Plst,fList);
 		
 		Intersection Start = (pathlist.get(0).getInter().get(0));
 		int size = pathlist.get(0).getInter().size();
 		Intersection End = (pathlist.get(0).getInter().get(size-1));
+		
+		Point2D mid = new Point2D((End.getLocation().x()+ Start.getLocation().x())/2,(End.getLocation().y()+Start.getLocation().y())/2);
+		double radius = mid.distanceTo(Start.getLocation())*4;
+		ArrayList<Event> fList = filterCrimes(dbase, mid, radius); // filter the crime database
 		
 		// Assign a value to each intersection and start and end
 		ArrayList<Intersection> InterPath = new ArrayList<Intersection>();
@@ -193,7 +185,7 @@ public class test {
 				Intersection inter = interList.get(i); // current intersection in list
 
 				
-				for (Event ev : oList) {
+				for (Event ev : fList) {
 					ev.distanceTo(inter.getLocation());
 					inter.addCrm(ev); // add crime to intersection list
 					interDistTotal+=ev.getdistTo();
