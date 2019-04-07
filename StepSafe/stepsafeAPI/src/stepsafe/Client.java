@@ -79,10 +79,15 @@ public class Client {
      * 
      */	
 	
-	public static ArrayList<Intersection> optimalPath(ArrayList<Path> pathlist, ArrayList<Event> oList, Intersection Start, Intersection End){
+	public static ArrayList<Intersection> optimalPath(ArrayList<Path> pathlist, ArrayList<Event> oList){
+		
+		Intersection Start = (pathlist.get(0).getInter().get(0));
+		int size = pathlist.get(0).getInter().size();
+		Intersection End = (pathlist.get(0).getInter().get(size-1));
 		
 		// Assign a value to each intersection and start and end
 		ArrayList<Intersection> InterPath = new ArrayList<Intersection>();
+		
 		Start.setId(0);
 		End.setId(1);
 		InterPath.add(Start); // Start identifier

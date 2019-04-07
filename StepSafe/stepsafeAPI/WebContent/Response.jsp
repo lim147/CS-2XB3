@@ -22,7 +22,9 @@
 		out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
 		
 		ArrayList<Path> result = stepsafe.test.generatePaths(s, t);
-
+		//Intersection start;
+		//Intersection end;
+		
 		
 		for(int i = 1; i <= result.size(); i++){		
 			out.print("<br/>");			
@@ -31,6 +33,12 @@
 			out.print("<br/>");			
 			out.println(result.get(i-1).toWeb());			
 		}
+		
+		
+
+		
+		
+		
 	%>
 
 

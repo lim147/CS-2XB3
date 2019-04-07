@@ -135,6 +135,6 @@ public class TestRead {
 		dbase2.add(crime4);
 		dbase2.add(crime5);
 		
-		Client.optimalPath(pathL,dbase2,start,end);
+		Client.optimalPath(pathL,dbase2);
 	}
 }

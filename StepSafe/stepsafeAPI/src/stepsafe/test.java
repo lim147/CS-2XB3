@@ -8,14 +8,15 @@ import types.*;
 
 public class test {	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-		String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
-		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
-		
+		 String cmd = "python";
+		 String filepath = "C:\\Users\\Pieci\\Desktop\\Other\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
+		 
 		/*
 		 Alice:
 		 
 		 String cmd = "python";
-		 String filepath = ...; -- The full path of hello_world.py, use pwd to get it.
+		 String filepath = "C:\\Users\\Pieci\\Desktop\\Other\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
+		 ...; -- The full path of hello_world.py, use pwd to get it.
 		 */
 		
 		/*

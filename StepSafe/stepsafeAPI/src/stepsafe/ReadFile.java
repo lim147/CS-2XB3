@@ -2,6 +2,7 @@ package stepsafe;
 
 /**
  *  The {@code ReadFile} class reads from the dataset file
+ *  //apply fuhttps://marketplace.eclipse.org/content/eclipse-java-ee-developer-tools-0nction to load data to dbase:
  *  @author Alice Ip, Meijing Li, Robert Vardy, Indika Wijesundera
  *  @version 1.0
  *  @since 2019-03-13
@@ -36,15 +37,15 @@ public class ReadFile {
 			}
 			String[] temp = line.split(",");
 			
-			if (temp[8] == "Assault")
+			if (temp[8].equals("Assault"))
 				deg = 1;
-			else if (temp[8] == "Break and Enter")
+			else if (temp[8].equals("Break and Enter")) 
 				deg = 2;
-			else if (temp[8] == "Robbery")
+			else if (temp[8].equals("Robbery"))
 				deg = 3;
-			else if (temp[8] == "Theft Over")
+			else if (temp[8].equals("Theft Over"))
 				deg = 2;
-			else if (temp[8] == "Auto Theft")
+			else if (temp[8].equals("Auto Theft"))
 				deg = 1;
 			else
 				throw new IllegalArgumentException("MCI not matched");
