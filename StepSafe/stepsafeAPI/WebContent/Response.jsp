@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="types.*"%>
+<%@ page import="stepsafe.*"%>
 <%@ page import="stepsafe.ReadFile"%>
 <%@ page import="java.io.BufferedReader"%>
 <%@ page import="java.io.InputStreamReader"%>
@@ -22,14 +23,14 @@
 	<%
 		out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
 		
-		ArrayList<Path> paths = stepsafe.test.generatePaths(s, t);
+		ArrayList<Path> pathlist = stepsafe.test.generatePaths(s, t);
 		
-		for(int i = 1; i <= paths.size(); i++){		
+		for(int i = 1; i <= pathlist.size(); i++){		
 			out.print("<br/>");			
 			out.print("Path ");			
 			out.print(i);			
 			out.print("<br/>");			
-			out.println(paths.get(i-1).toWeb());			
+			out.println(pathlist.get(i-1).toWeb());			
 		}
 		
 		
@@ -47,8 +48,8 @@
 	
 	//out.println(dbase.size() + "<br/>");	
 	
-	Path optPath = new Path();
-	//Path optPath = stepsafe.test.optimalPath(paths, dbase);
+	//Path optPath = new Path();
+	Path optPath = stepsafe.test.optimalPath(pathlist, dbase);
 	out.println(optPath.toWeb());
 	
 	/* for(int i = 0; i < result.size(); i++){
@@ -56,7 +57,9 @@
 	}  */
 	
 	%>
-
+	
+	
+	
 
 
 
