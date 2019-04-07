@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="types.*"%>
-<%@ page import="stepsafe.ReadFile*"%>
+<%@ page import="stepsafe.ReadFile"%>
 <%@ page import="java.io.BufferedReader"%>
 <%@ page import="java.io.InputStreamReader"%>
 
@@ -22,24 +22,39 @@
 	<%
 		out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
 		
-		ArrayList<Path> result = stepsafe.test.generatePaths(s, t);
-		ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
-		ReadFile.read_from_db(dbase);
+		ArrayList<Path> paths = stepsafe.test.generatePaths(s, t);
 		
-		
-		for(int i = 1; i <= result.size(); i++){		
+		for(int i = 1; i <= paths.size(); i++){		
 			out.print("<br/>");			
 			out.print("Path ");			
 			out.print(i);			
 			out.print("<br/>");			
-			out.println(result.get(i-1).toWeb());			
+			out.println(paths.get(i-1).toWeb());			
 		}
 		
 		
-
 		
-		
-		
+	%>
+	
+	
+	
+	<%
+	
+	out.print("<br/>" + "The optimal path is:" + "<br/>" + "<br/>");
+	
+	ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
+	ReadFile.read_from_db(dbase);
+	
+	//out.println(dbase.size() + "<br/>");	
+	
+	Path optPath = new Path();
+	//Path optPath = stepsafe.test.optimalPath(paths, dbase);
+	out.println(optPath.toWeb());
+	
+	/* for(int i = 0; i < result.size(); i++){
+		out.print(result.get(i).toWeb() + "<br/>");	
+	}  */
+	
 	%>
 
 
