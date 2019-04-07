@@ -1,4 +1,4 @@
-package stepsafe;
+package types;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -142,7 +142,7 @@ public class QuickSort{
     public static void main(String[] args)throws IOException {
     	int numberofnodes = 131033;
     	Event[] listOfEvents = new Event[numberofnodes];
-    	BufferedReader us = new BufferedReader(new FileReader("Data/MCI_2014_to_2017.csv"));
+    	BufferedReader us = new BufferedReader(new FileReader("Dataset/MCI_2014_to_2017.csv"));
 		String citylist = us.readLine(); //skips first line
 		int j = 0;
 		while((citylist = us.readLine()) != null) {
@@ -162,7 +162,7 @@ public class QuickSort{
         Quick.sort(listOfEvents);
         show(listOfEvents);
         assert isSorted(listOfEvents);
-        PrintWriter out = new PrintWriter("Data/SortedEvents.txt");
+        PrintWriter out = new PrintWriter("Dataset/SortedEvents.txt");
         for (int i = 0; i < listOfEvents.length; i++) {
             out.println(listOfEvents[i]);
         }
