@@ -15,23 +15,23 @@
 	<%
 		String s = request.getParameter("start");
 		String t = request.getParameter("end");
-		out.print("Start:" + "<br/>" + s + "<br/>");
-		out.print("End:" + "<br/>" + t + "<br/>");
+		out.print("Start: "  + s + "<br/>");
+		out.print("End: "  + t + "<br/>");
 	%>
 
 
 	<%
-		out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
+		//out.print("<br/>" + "The path options are:" + "<br/>" + "<br/>");
 		
 		ArrayList<Path> pathlist = stepsafe.test.generatePaths(s, t);
 		
-		for(int i = 1; i <= pathlist.size(); i++){		
-			out.print("<br/>");			
-			out.print("Path ");			
-			out.print(i);			
-			out.print("<br/>");			
-			out.println(pathlist.get(i-1).toWeb());			
-		}
+		//for(int i = 1; i <= pathlist.size(); i++){		
+		//	out.print("<br/>");			
+		//	out.print("Path ");			
+		//	out.print(i);			
+		//	out.print("<br/>");			
+		//	out.println(pathlist.get(i-1).toWeb());			
+		//}
 		
 		
 		
@@ -41,12 +41,12 @@
 	
 	<%
 	
-	out.print("<br/>" + "The optimal path is:" + "<br/>" + "<br/>");
+	out.print("<br/>" + "The optimal path is: " + "<br/>" + "<br/>");
 	
 	ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
 	ReadFile.read_from_db(dbase);
 	
-	//out.println(dbase.size() + "<br/>");	
+
 	
 	//Path optPath = new Path();
 	Path optPath = stepsafe.test.optimalPath(pathlist, dbase);

@@ -24,7 +24,7 @@ public class ReadFile {
 	public static void read_from_db(List<Event> dbase) throws NumberFormatException, IOException {
 		
 		//read from database
-		File f = new File("/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/Dataset/MCI_2014_to_2017.csv");
+		File f = new File("C:\\Users\\Pieci\\Desktop\\2XB3_Project\\Datasets\\MCI_2014_to_2017.csv");
 		FileReader fr = new FileReader(f);
 		BufferedReader br = new BufferedReader(fr);
 		String line;
