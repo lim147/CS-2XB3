@@ -14,8 +14,8 @@ public class test {
 	public Point2D end;
 	
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-		String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
-		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
+		String cmd = "C:\\Users\\Pieci\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe";
+		String filepath = "C:\\Users\\Pieci\\Desktop\\Other\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
 		 
 		/*
 		 Alice:
