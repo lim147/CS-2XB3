@@ -30,17 +30,6 @@ public class Point2D {
 	}
 	
     /**
-     * Constructor for Point2D
-     *
-     * @param  Id the Id of the path
-     * @param  Inter a list of Point2D
-     */
-	public Point2D() {
-		this.x = 0.0;
-		this.y = 0.0;
-	}
-	
-    /**
      * Accessor for x
      * @return x
      */
@@ -78,5 +67,4 @@ public class Point2D {
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}
-
 }

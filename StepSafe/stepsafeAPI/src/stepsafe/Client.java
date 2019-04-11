@@ -86,9 +86,6 @@ public class Client {
 		x.add(t);
 		return x;
 	}
-
-
-	
 	
     /**
      * Filters through a list of crimes, and returns a list where the crimes fall under the radius of a target Point2D
@@ -140,8 +137,6 @@ public class Client {
 	
 	public static Path optimalPath(ArrayList<Path> pathlist, ArrayList<Event> dbase) throws NumberFormatException, IOException{
 		
-
-		
 		Intersection Start = (pathlist.get(0).getInter().get(0));
 		int size = pathlist.get(0).getInter().size();
 		Intersection End = (pathlist.get(0).getInter().get(size-1));
@@ -170,14 +165,12 @@ public class Client {
 			for (int i = 1; i < p.getInter().size()-1;i++) { // Iterate through intersections in cur path
 				
 				Intersection inter = interList.get(i); // current intersection in list
-
 				
 				for (Event ev : fList) {
 					ev.distanceTo(inter.getLocation());
 					inter.addCrm(ev); // add crime to intersection list
 					interDistTotal+=ev.getdistTo();
 				}
-				inter.sortCrm();
 
 				inter.setCrimeDst(interDistTotal); // Set the intersection crime distance value
 				inter.setId(interIndex); // Set intersection id to id
@@ -225,35 +218,6 @@ public class Client {
 		for (DirectedEdge a : sonePath) {
 			optPath.addIntersection(InterPath.get(a.to()));
 		}
-		
-		
-//		for (Intersection i : optPath) {
-//			System.out.println(i);
-//		}
 		return optPath;
 	}
-	
-	
-	public static void main(String[] args) throws IOException, InterruptedException {
-		ArrayList<Path> paths = generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
-//		System.out.println(paths.size());
-//		for(int i = 0; i < paths.size(); i++) {
-//			System.out.println("One path is:");
-//			Path path = paths.get(i);
-//			System.out.print(path.toString());
-//		}
-//		System.out.println();
-		System.out.println("The optimal path is:");
-		
-		ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
-		ReadFile.read_from_db(dbase);
-		
-		Path optPath = stepsafe.Client.optimalPath(paths, dbase);
-		
-		
-		System.out.println(optPath.toString());	
-		
-	}
-	
-
 }

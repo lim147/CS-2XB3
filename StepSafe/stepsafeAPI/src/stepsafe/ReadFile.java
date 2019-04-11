@@ -21,7 +21,7 @@ import types.Event;
 import types.Point2D;
 
 public class ReadFile {
-	public static void read_from_db(List<Event> dbase) throws NumberFormatException, IOException {
+	public static void read_from_db(ArrayList<Event> dbase) throws NumberFormatException, IOException {
 		
 		//read from database
 		File f = new File("C:\\Users\\Pieci\\Desktop\\2XB3_Project\\Datasets\\MCI_2014_to_2017.csv");

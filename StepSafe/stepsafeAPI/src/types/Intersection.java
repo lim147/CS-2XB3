@@ -2,7 +2,6 @@ package types;
 
 import java.util.ArrayList;
 
-
 /**
  *  The {@code Intersection} class represents a ADT for an Intersection at some coordinate location
  *  Dependencies: Point2D.java
@@ -34,27 +33,7 @@ public class Intersection {
 		this.instruction = instruction;
 		crmLst = new ArrayList<Event>();
 	}
-
-    /**
-     * Constructor for an intersection that takes Name, and coordinates as Point2D
-     *
-     * @param  Name the name of the intersection
-     * @param  coord a Point2D containing longitude and latitude accordingly
-     */
-	public Intersection(String Name, Point2D coord) {
-		this.location = coord;
-	}
 	
-    /**
-     * Initializes a new Intersection that is a deep copy of specified Intersection
-     *
-     * @param  Name the name of the intersection
-     * @param  coord a Point2D containing longitude and latitude accordingly
-     */
-	public Intersection(Intersection i) {
-		this.location = i.getLocation();
-	}
-
     /**
      * Sets the crimeDst value
      *
@@ -74,15 +53,6 @@ public class Intersection {
 	}
 	
     /**
-     * Sorts the Crm List
-     *
-     *@return the crime rating value
-     */
-	public void sortCrm(){
-
-	}
-	
-    /**
      * Sets the id value
      *
      * @param  id value of intersection
@@ -99,8 +69,7 @@ public class Intersection {
 	public int getId() {
 		return id;
 	}
-	
-    
+	   
     /**
      * Accesses the location value
      *
@@ -147,7 +116,4 @@ public class Intersection {
 		String s = instruction;
 		return s;
 	}
-	
-	
-
 }

@@ -24,6 +24,7 @@ import org.junit.Test;
 
 
 import stepsafe.Client;
+import stepsafe.ReadFile;
 import types.Event;
 import types.Point2D;
 import types.Path;
@@ -88,7 +89,27 @@ public class TestRead {
 		assert(fList.contains(crime4) == true);
 	}
 	
-	public void Point2D() {
+	public void testClient() throws NumberFormatException, IOException, InterruptedException {
+		ArrayList<Path> paths = Client.generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+//	System.out.println(paths.size());
+//	for(int i = 0; i < paths.size(); i++) {
+//		System.out.println("One path is:");
+//		Path path = paths.get(i);
+//		System.out.print(path.toString());
+//	}
+//	System.out.println();
+	System.out.println("The optimal path is:");
+	
+	ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
+	ReadFile.read_from_db(dbase);
+	
+	Path optPath = stepsafe.Client.optimalPath(paths, dbase);
+	
+	
+	System.out.println(optPath.toString());	
+	}
+	
+	public void testPoint2D() {
 		/**
 		
 		Point2D p = new Point2D();
