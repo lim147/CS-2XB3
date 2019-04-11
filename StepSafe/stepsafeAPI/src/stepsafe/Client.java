@@ -8,7 +8,7 @@ import java.util.List;
 
 import types.*;
 
-public class test {	
+public class Client {	
 	
 	public Point2D start;
 	public Point2D end;
@@ -248,7 +248,7 @@ public class test {
 		ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
 		ReadFile.read_from_db(dbase);
 		
-		Path optPath = stepsafe.test.optimalPath(paths, dbase);
+		Path optPath = stepsafe.Client.optimalPath(paths, dbase);
 		
 		
 		System.out.println(optPath.toString());	

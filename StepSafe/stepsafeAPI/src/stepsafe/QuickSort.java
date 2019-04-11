@@ -1,4 +1,4 @@
-package types;
+package stepsafe;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import edu.princeton.cs.algs4.Quick;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
+import types.Event;
+import types.Point2D;
 
 
 public class QuickSort{

@@ -1,9 +1,9 @@
 package stepsafe;
 /**
- *  The {@code DijkstraSP} is a modified Dijkstra algorithm taken from Algorithms Textbook by
- *  Robert Sedgewick and Kevin Wayne where modification allows for keeping track of previous meal. This
- *  class represents a data type for solving the single-source shortest paths problem in edge-weighted
- *  digraphs where the edge weights are nonnegative
+ *  The {@code DijkstraSP} is a  Dijkstra algorithm taken from Algorithms Textbook by
+ *  Robert Sedgewick and Kevin Wayne. Thisclass represents a data type for solving the 
+ *  single-source shortest paths problem in edge-weighted digraphs where the edge weights
+ *  are nonnegative
  *  
  *  <p>
  *  This implementation uses Dijkstra's algorithm with a binary heap.
@@ -46,8 +46,6 @@ public class DijkstraSP {
 
         distTo = new double[G.V()];
         edgeTo = new DirectedEdge[G.V()];
-
-        
 
         validateVertex(s);
 

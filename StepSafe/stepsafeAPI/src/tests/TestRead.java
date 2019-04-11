@@ -23,7 +23,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import stepsafe.test;
+import stepsafe.Client;
 import types.Event;
 import types.Point2D;
 import types.Path;
@@ -79,7 +79,7 @@ public class TestRead {
 		Point2D mid = new Point2D((end.x()+ start.x())/2,(end.y()+start.y())/2);
 		double radius = mid.distanceTo(start)*4;
 		
-		ArrayList<Event> fList = test.filterCrimes (dbase, mid, radius);
+		ArrayList<Event> fList = Client.filterCrimes (dbase, mid, radius);
 		//fList.print();
 		
 		assert(fList.contains(crime1) == true);
@@ -136,6 +136,6 @@ public class TestRead {
 		dbase2.add(crime4);
 		dbase2.add(crime5);
 		
-		test.optimalPath(pathL,dbase2);
+		Client.optimalPath(pathL,dbase2);
 	}
 }

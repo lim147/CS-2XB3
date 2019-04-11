@@ -2,7 +2,6 @@ package types;
 
 import java.util.ArrayList;
 
-import stepsafe.Merge;
 
 /**
  *  The {@code Intersection} class represents a ADT for an Intersection at some coordinate location
