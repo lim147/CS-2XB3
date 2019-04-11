@@ -138,6 +138,11 @@ public class Intersection {
 		return s;
 	}
 	
+    /**
+     * Prints out the Intersection in a string format for the web
+     *
+     * @return intersection in a string format for the web
+     */
 	public String toWeb() {
 		String s = instruction;
 		return s;

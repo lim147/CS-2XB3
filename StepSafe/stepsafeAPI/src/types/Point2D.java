@@ -18,25 +18,59 @@ public class Point2D {
 	private final double x;
 	private final double y;
 	
+    /**
+     * Constructor for Point2D that holds coordinates of a location
+     *
+     * @param  Id the Id of the path
+     * @param  Inter a list of Point2D
+     */
 	public Point2D(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
 	
+    /**
+     * Constructor for Point2D
+     *
+     * @param  Id the Id of the path
+     * @param  Inter a list of Point2D
+     */
 	public Point2D() {
 		this.x = 0.0;
 		this.y = 0.0;
 	}
 	
-	
+    /**
+     * Accessor for x
+     * @return x
+     */
 	public double x() {return x;}
+	
+    /**
+     * Accessor for y
+     * @return y
+     */
 	public double y() {return y;}
+	
+    /**
+     * Calculates and returns the r of the coordinate
+     * @return r
+     */
 	public double r() {return Math.sqrt(x*x + y*y); }
+	
+    /**
+     * Calculates and returns the theta of the coordinate
+     * @return x
+     */
 	public double theta() {return Math.atan2(y,  x);}
 	
-	//calculate distance(km)
+    /**
+     * Accessor for x
+     * @param that the  Point2D whose distance to is to be calculated
+     * @return double representing the distance between current object and "that"
+     * https://www.movable-type.co.uk/scripts/latlong.html
+     */
 	public double distanceTo(Point2D that) {
-		//https://www.movable-type.co.uk/scripts/latlong.html
 		int R = 6371; //km
 		double x1 = Math.toRadians(this.x);
 		double x2 = Math.toRadians(that.x);
@@ -49,39 +83,12 @@ public class Point2D {
 		return dis;
 	}
 	
+    /**
+     * Returns the Point2D as a string
+     * @return the Point2D as a string
+     */
 	public String toString() {
 		return "(" + x + ", " + y + ")";
-	}
-	
-	public static void main(String[] args) {
-		
-		/**
-		
-		Point2D p = new Point2D();
-		System.out.println("p = " + p);
-		System.out.println(" x = " + p.x());
-		System.out.println(" y = " + p.y());
-		System.out.println(" r = " + p.r());
-		System.out.println(" theta = " + p.theta());
-		System.out.println();
-		
-		Point2D q = new Point2D(0.5, 0.5);
-		System.out.println("q = " + q);
-		System.out.println("dist(p, q) = " + p.distanceTo(q));
-		
-		Point2D a = new Point2D();
-		System.out.println("a = " + a);
-		
-		Point2D b = new Point2D();
-		System.out.println("b = " + b);
-		System.out.println("dist(a,b) = " + a.distanceTo(b));
-		
-		**/
-		Point2D p = new Point2D(43.7688293, -79.520401);
-		Point2D q = new Point2D(43.7646408, -79.3446503);
-		System.out.println("dist(p, q) = " + p.distanceTo(q));
-		
-		
 	}
 
 }

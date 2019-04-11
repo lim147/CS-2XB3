@@ -28,23 +28,38 @@ public class Path {
 		this.Inter = new ArrayList();
 	}
 	
-	//add intersection to the path
+    /**
+     * Mutator that adds an intersection to the current Path
+     * 
+     * @param e the intersection
+     */
 	public void addIntersection(Intersection e) {
 		Inter.add(e);
 	}
 	
     /**
      * Accessor for the array of intersections
+     * 
+     * @return the array of intersection
      */
 	public ArrayList<Intersection> getInter(){
 		return Inter;
 	}
 	
-	
+    /**
+     * Accessor for the size of the intersection array
+     * 
+     * @return the list of intersection
+     */
 	public int size() {
 		return Inter.size();
 	}
 	
+    /**
+     * Returns the list of intersections as a string
+     * 
+     * @return the list of intersection as a string
+     */
 	public String toString() {
 		String s = "";
 		for (int i = 0; i < size(); i++)
@@ -52,6 +67,11 @@ public class Path {
 		return s;
 	}
 	
+    /**
+     * Returns the list of intersections as a string to be printed on on jsp
+     * 
+     * @return the list of intersection as a string to be printed on jsp
+     */
 	public String toWeb() {
 		String s = "";
 		for (int i = 0; i < size(); i++)

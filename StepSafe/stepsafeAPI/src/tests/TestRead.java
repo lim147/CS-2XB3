@@ -88,6 +88,34 @@ public class TestRead {
 		assert(fList.contains(crime4) == true);
 	}
 	
+	public void Point2D() {
+		/**
+		
+		Point2D p = new Point2D();
+		System.out.println("p = " + p);
+		System.out.println(" x = " + p.x());
+		System.out.println(" y = " + p.y());
+		System.out.println(" r = " + p.r());
+		System.out.println(" theta = " + p.theta());
+		System.out.println();
+		
+		Point2D q = new Point2D(0.5, 0.5);
+		System.out.println("q = " + q);
+		System.out.println("dist(p, q) = " + p.distanceTo(q));
+		
+		Point2D a = new Point2D();
+		System.out.println("a = " + a);
+		
+		Point2D b = new Point2D();
+		System.out.println("b = " + b);
+		System.out.println("dist(a,b) = " + a.distanceTo(b));
+		
+		**/
+//		Point2D p = new Point2D(43.7688293, -79.520401);
+//		Point2D q = new Point2D(43.7646408, -79.3446503);
+//		System.out.println("dist(p, q) = " + p.distanceTo(q));
+	}
+	
 	public void testPath() throws NumberFormatException, IOException{
 		Intersection start = new Intersection(0,0,"Start here");
 		Intersection end = new Intersection(0,0,"End here");
