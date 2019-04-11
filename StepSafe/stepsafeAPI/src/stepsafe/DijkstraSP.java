@@ -15,6 +15,10 @@ package stepsafe;
  *  <p>
  *  
  *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @author Indika Wijesundera
+ *  
  *  @version 1.0
  *  @since 2019-03-25
  *  see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of    

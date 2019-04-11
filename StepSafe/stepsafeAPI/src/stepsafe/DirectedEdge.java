@@ -7,6 +7,10 @@ package stepsafe;
  *  (naming the two vertices) and a real-value weight. The data type provides methods for accessing the two endpoints of the directed edge and
  *  the weight.
  *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @author Indika Wijesundera
+ *  
  *  @version 1.0
  *  @since 2019-04-03
  *  
