@@ -68,7 +68,7 @@ public class TestRead {
 	public void testEvent(){
 		Event crime1 = new Event("1", 1, "Jan", 1, 1, "Description", new Point2D(0,0),2.0);
 		Event crime2 = new Event("2", 2, "Jan", 2, 2, "Description", new Point2D(1,0),2.0);
-		System.out.println(crime1.getDay());
+
 		System.out.println(crime2.toString());		
 	}
 	

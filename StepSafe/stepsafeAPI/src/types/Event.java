@@ -47,28 +47,6 @@ public class Event implements Comparable<Event>{
 		this.Degree = Degree;
 	}
 	
-	   /**
-	    * Constructor of Event class 
-	    *
-	    * @param  Id the id of the event
-	    * @param  Year the year of the event
-	    * @param  Month the month of the event
-	    * @param  Day the day of the event 
-	    * @param  Hour the hour of the event 
-	    * @param  MCI the MCI of the event 
-	    * @param  Coord the coordinates of the point
-	    */
-	public Event(Event e) {
-		this.Id = e.getId();
-		this.Year = e.getYear();
-		this.Month = e.getMonth();
-		this.Day = e.getDay();
-		this.Hour = e.getHour();
-		this.MCI = e.getMCI();
-		this.Coord = e.getPoint2D();
-		this.Degree = e.getDegree();
-	}
-	
 	/**
 	 * Method that calculates the distance to an Event
 	 * 
@@ -104,69 +82,6 @@ public class Event implements Comparable<Event>{
 		return this.Id;
 		}
 
-	/**
-	 * Accessor for the Year 
-	 * 
-	 * @return Year of the event occurrence
-	 */
-	public int getYear() {
-		return this.Year;
-		}
-
-	/**
-	 * Accessor for the Month
-	 * 
-	 * @return Month of the event occurrence
-	 */
-	public String getMonth() {
-		return this.Month;
-		}
-	
-	/**
-	 * Accessor for the Day
-	 * 
-	 * @return Day of the event occurrence
-	 */
-	public int getDay() {
-		return this.Day;
-	}
-	
-	/**
-	 * Accessor for the Hour 
-	 * 
-	 * @return Hour of the event occurrence
-	 */
-	public int getHour() {
-		return this.Hour;
-	}
-	
-	/**
-	 * Accessor for the MCI
-	 * 
-	 * @return MCI of the event occurrence
-	 */
-	public String getMCI() {
-		return this.MCI;
-	}
-	
-	/**
-	 * Accessor for the x coordinate
-	 * 
-	 * @return x coordinate of the event
-	 */
-	public double getCoordx() {
-		return this.Coord.x();
-	}
-	
-	/**
-	 * Accessor for the y coordinate
-	 * 
-	 * @return y coordinate of the event
-	 */
-	public double getCoordy() {
-		return this.Coord.y();
-	}
-	
 	/**
 	 * Accessor for the Point2D 
 	 * 

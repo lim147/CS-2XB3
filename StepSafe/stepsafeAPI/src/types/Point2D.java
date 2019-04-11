@@ -53,18 +53,6 @@ public class Point2D {
 	public double y() {return y;}
 	
     /**
-     * Calculates and returns the r of the coordinate
-     * @return r
-     */
-	public double r() {return Math.sqrt(x*x + y*y); }
-	
-    /**
-     * Calculates and returns the theta of the coordinate
-     * @return x
-     */
-	public double theta() {return Math.atan2(y,  x);}
-	
-    /**
      * Accessor for x
      * @param that the  Point2D whose distance to is to be calculated
      * @return double representing the distance between current object and "that"
