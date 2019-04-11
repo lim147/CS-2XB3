@@ -1,4 +1,4 @@
-package stepsafe;
+package types;
 
 /**
  *  The {@code DirectedEdge} is a modified Directed Edge class taken from Algorithms Textbook by

@@ -134,7 +134,6 @@ public class Client {
      * @throws NumberFormatException 
      * 
      */	
-	
 	public static Path optimalPath(ArrayList<Path> pathlist, ArrayList<Event> dbase) throws NumberFormatException, IOException{
 		
 		Intersection Start = (pathlist.get(0).getInter().get(0));

@@ -26,6 +26,8 @@ package stepsafe;
  */
 import edu.princeton.cs.algs4.IndexMinPQ;
 import edu.princeton.cs.algs4.Stack;
+import types.DirectedEdge;
+import types.EdgeWeightedDigraph;
 
 public class DijkstraSP {
     private double[] distTo;          // distTo[v] = distance  of shortest s->v path
