@@ -77,7 +77,7 @@ public class TestRead {
 		Point2D start = new Point2D (-3,0); 
 		Point2D end = new Point2D (3,0); 
 		
-		Point2D mid = new Point2D((end.x()+ start.x())/2,(end.y()+start.y())/2);
+		Point2D mid = new Point2D((end.getX()+ start.getX())/2,(end.getY()+start.getY())/2);
 		double radius = mid.distanceTo(start)*4;
 		
 		ArrayList<Event> fList = Client.filterCrimes (dbase, mid, radius);
