@@ -1,5 +1,18 @@
 package stepsafe;
 
+/**
+ *  The {@code Client} class Class provides functionalities generate paths as well as select the optimal path 
+ *  considering both distances and crime rates.
+ *  
+ *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @authorIndika Wijesundera
+ *  @version 1.0
+ *  @since 2019-03-13
+ *  
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,9 +26,21 @@ public class Client {
 	public Point2D start;
 	public Point2D end;
 	
+	 /**
+     * generatePaths sends requests to Google API and generate paths based on intersections data google returns.
+     * Note: the path for python script has to be full pathname to make sure that jsp file could find it in web running environment.
+     * 
+     * @param  CrmAList the original crime list
+     * @param  origin point to filter around
+     * @param  r radius of the circle around target for filtering
+     * @return a new filtered CrmAList
+     * 
+     */
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-		String cmd = "C:\\Users\\Pieci\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe";
-		String filepath = "C:\\Users\\Pieci\\Desktop\\Other\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
+		String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
+		
+		//The full path of hello_world.py, use pwd to get it.
+		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
 		 
 		/*
 		 Alice:
@@ -69,23 +94,9 @@ public class Client {
 		return result;
 	}
 	
-//	public static String printToWeb(String s, String t) throws IOException, InterruptedException {
-//		ArrayList<Path> temp = generatePaths(s, t);
-//		String str = temp.get(0).getInter().get(0).toString();
-//		for (int i = 0; i < temp.size(); i++) {
-//			str += temp.get(i).toString() + "\n";
-//			str += "hellos";
-//		}
-//		String str = s + t;
-//		return str;
-//	}
+
 	
-	public static ArrayList<String> join(String s, String t) {
-		ArrayList<String> x = new ArrayList();
-		x.add(s);
-		x.add(t);
-		return x;
-	}
+
 	
     /**
      * Filters through a list of crimes, and returns a list where the crimes fall under the radius of a target Point2D
