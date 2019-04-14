@@ -1,8 +1,0 @@
-COMP SCI 2XB3
-
-400078727, Alice Ip           ,Leader, Programmer, Log Admin
-001431996, Indika Wijesundera ,Tester, Programmer
-400110713, Meijing Li         ,User Interface Designer, Programmer
-001425404, Rob Vardy          ,Researcher, Programmer
-
-2019-04-14 "The work being submitted is our group work"
