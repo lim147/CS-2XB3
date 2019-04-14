@@ -30,10 +30,9 @@ public class Client {
      * generatePaths sends requests to Google API and generate paths based on intersections data google returns.
      * Note: the path for python script has to be full pathname to make sure that jsp file could find it in web running environment.
      * 
-     * @param  CrmAList the original crime list
-     * @param  origin point to filter around
-     * @param  r radius of the circle around target for filtering
-     * @return a new filtered CrmAList
+     * @param  s start address
+     * @param  t end address
+     * @return a ArrayList of paths
      * 
      */
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
