@@ -15,7 +15,10 @@ import types.Event;
 import types.Point2D;
 
 /**
- * @author Indika
+ *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @author Indika Wijesundera
  *
  */
 public class TestSort {

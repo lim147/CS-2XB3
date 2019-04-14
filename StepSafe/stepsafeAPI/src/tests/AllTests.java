@@ -7,6 +7,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
 	TestRead.class,
+	TestSort.class,
+	TestGraph.class,
 	//TestJUnit2.class,
 	//TestJUnit3.class
 })
