@@ -21,6 +21,15 @@ import types.Event;
 import types.Point2D;
 
 public class ReadFile {
+	 /**
+     * read_from_db reads data from database “MCI_2014_to_2017.csv” and organizes and store each record as an Event instance. 
+     * It takes an empty list as input and filters all crime events in it.
+     *  
+     * Note: the path for database has to be full pathname to make sure that jsp file could find it in web running environment.
+     * 
+     * @param  dbase empty list to be filtered
+     * 
+     */
 	public static void readFromDB(ArrayList<Event> dbase) throws NumberFormatException, IOException {
 		
 		//read from database
