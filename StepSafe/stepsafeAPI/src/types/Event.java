@@ -53,8 +53,8 @@ public class Event implements Comparable<Event>{
 	 * @param x the event to calculate the distance to
 	 */
 	public void distanceTo(Point2D x) {
-		double xdist = (this.Coord.getX() - x.getX());
-		double ydist = (this.Coord.getY() - x.getY());
+		double xdist = (this.Coord.x() - x.x());
+		double ydist = (this.Coord.y() - x.y());
 		this.distTo = Math.sqrt(Math.pow(xdist, 2) + Math.pow(ydist, 2));
 		this.distTo*=this.Degree;
 		this.distTo=1/(this.distTo);

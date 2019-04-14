@@ -140,7 +140,7 @@ public class Client {
 		int size = pathlist.get(0).getInter().size();
 		Intersection End = (pathlist.get(0).getInter().get(size-1));
 		
-		Point2D mid = new Point2D((End.getLocation().getX()+ Start.getLocation().getX())/2,(End.getLocation().getY()+Start.getLocation().getY())/2);
+		Point2D mid = new Point2D((End.getLocation().x()+ Start.getLocation().x())/2,(End.getLocation().y()+Start.getLocation().y())/2);
 		double radius = mid.distanceTo(Start.getLocation())*4;
 		ArrayList<Event> fList = filterCrimes(dbase, mid, radius); // filter the crime database
 		
