@@ -18,7 +18,6 @@ package types;
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne. 
  */
 
-
 public class DirectedEdge { 
     private final int v;
     private final int w;
@@ -40,7 +39,7 @@ public class DirectedEdge {
         if (w < 0) throw new IllegalArgumentException("Vertex names must be nonnegative integers");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         this.v = v;
         this.w = w;
-        this.weight = weight; // sets the weight to be the price of the food
+        this.weight = weight; 
     }
 
     /**

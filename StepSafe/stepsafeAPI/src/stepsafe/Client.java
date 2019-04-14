@@ -94,10 +94,6 @@ public class Client {
 		return result;
 	}
 	
-
-	
-
-	
     /**
      * Filters through a list of crimes, and returns a list where the crimes fall under the radius of a target Point2D
      * 1 mile =1.609 kilometers

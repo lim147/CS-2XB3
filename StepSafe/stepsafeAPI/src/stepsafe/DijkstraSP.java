@@ -24,6 +24,7 @@ package stepsafe;
  *  see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of    
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne. 
  */
+
 import edu.princeton.cs.algs4.IndexMinPQ;
 import edu.princeton.cs.algs4.Stack;
 import types.DirectedEdge;
