@@ -33,13 +33,13 @@ public class Point2D {
      * Accessor for x
      * @return x
      */
-	public double x() {return x;}
+	public double getX() {return x;}
 	
     /**
      * Accessor for y
      * @return y
      */
-	public double y() {return y;}
+	public double getY() {return y;}
 	
     /**
      * Accessor for x

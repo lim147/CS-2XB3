@@ -1,7 +1,0 @@
-TODO:
-- test cases
-- double check the documentation, or add documentation if there isn't any
-
-Possible implementations if you feel like doing it:
-- assigning a rating based on the type of crime
-- assigning a rating based on how recent the crime was
