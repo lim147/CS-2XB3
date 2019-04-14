@@ -190,14 +190,4 @@ public class EdgeWeightedDigraph {
         }
         return s.toString();
     }
-
-    /**
-     * Unit tests the {@code EdgeWeightedDigraph} data type.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-
-    }
-
 }
