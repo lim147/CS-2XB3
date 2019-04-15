@@ -31,9 +31,6 @@ public class TestSort {
 	Event crime5;
 	Event[] list;
 	Event[] list2;
-			
-	
-	
 	
 	@Before
 	public void setUp() throws Exception {
@@ -53,7 +50,6 @@ public class TestSort {
 		list2[0] = crime1;
 		list2[1] = crime5;
 		list2[2] = crime4;
-		
 	}
 	
 	/**
@@ -68,11 +64,5 @@ public class TestSort {
 		
 		QuickSort.sort(list);
 		QuickSort.sort(list2);
-		
 	}
-	
-
-
-	
-
 }

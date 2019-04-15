@@ -61,9 +61,10 @@ public class TestRead {
 
 	@Test
 	public void test() throws NumberFormatException, IOException {
-		//fail("Not yet implemented");
-		//testFilter();
+
+		testFilter();
 		testPath();
+
 	}
 	
 	public void testEvent(){
@@ -73,6 +74,7 @@ public class TestRead {
 		System.out.println(crime2.toString());		
 	}
 	
+	//Test for filter to see if it filters as required
 	public void testFilter() {		
 		Point2D start = new Point2D (-3,0); 
 		Point2D end = new Point2D (3,0); 
@@ -81,60 +83,11 @@ public class TestRead {
 		double radius = mid.distanceTo(start)*4;
 		
 		ArrayList<Event> fList = Client.filterCrimes (dbase, mid, radius);
-		//fList.print();
 		
 		assert(fList.contains(crime1) == true);
 		assert(fList.contains(crime2) == true);
 		assert(fList.contains(crime3) == false);
 		assert(fList.contains(crime4) == true);
-	}
-	
-	public void testClient() throws NumberFormatException, IOException, InterruptedException {
-		ArrayList<Path> paths = Client.generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
-//	System.out.println(paths.size());
-//	for(int i = 0; i < paths.size(); i++) {
-//		System.out.println("One path is:");
-//		Path path = paths.get(i);
-//		System.out.print(path.toString());
-//	}
-//	System.out.println();
-	System.out.println("The optimal path is:");
-	
-	ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
-	ReadFile.readFromDB(dbase);
-	
-	Path optPath = stepsafe.Client.optimalPath(paths, dbase);
-	
-	
-	System.out.println(optPath.toString());	
-	}
-	
-	public void testPoint2D() {
-		/**
-		
-		Point2D p = new Point2D();
-		System.out.println("p = " + p);
-		System.out.println(" x = " + p.x());
-		System.out.println(" y = " + p.y());
-		System.out.println(" r = " + p.r());
-		System.out.println(" theta = " + p.theta());
-		System.out.println();
-		
-		Point2D q = new Point2D(0.5, 0.5);
-		System.out.println("q = " + q);
-		System.out.println("dist(p, q) = " + p.distanceTo(q));
-		
-		Point2D a = new Point2D();
-		System.out.println("a = " + a);
-		
-		Point2D b = new Point2D();
-		System.out.println("b = " + b);
-		System.out.println("dist(a,b) = " + a.distanceTo(b));
-		
-		**/
-//		Point2D p = new Point2D(43.7688293, -79.520401);
-//		Point2D q = new Point2D(43.7646408, -79.3446503);
-//		System.out.println("dist(p, q) = " + p.distanceTo(q));
 	}
 	
 	public void testPath() throws NumberFormatException, IOException{
