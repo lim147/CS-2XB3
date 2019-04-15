@@ -11,6 +11,7 @@ package stepsafe;
  *  @version 1.0
  *  @since 2019-03-13
  *  
+ *  Please look at the Compile time notes section under the design specification for any issues compiling our program 
  */
 
 import java.io.BufferedReader;
