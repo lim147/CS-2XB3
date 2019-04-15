@@ -63,6 +63,8 @@ public class TestSort {
 	public void testSort() throws Exception{
 		
 		QuickSort.sort(list);
+		assert QuickSort.isSorted(list);
 		QuickSort.sort(list2);
+		assert QuickSort.isSorted(list2);
 	}
 }

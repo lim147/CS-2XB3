@@ -125,7 +125,7 @@ public class QuickSort{
    /***************************************************************************
     *  Check if array is sorted - useful for debugging.
     ***************************************************************************/
-    private static boolean isSorted(Comparable[] a) {
+    public static boolean isSorted(Comparable[] a) {
         return isSorted(a, 0, a.length - 1);
     }
 
