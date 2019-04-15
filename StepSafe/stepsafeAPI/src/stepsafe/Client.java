@@ -38,7 +38,7 @@ public class Client {
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
 		String cmd = "python";
 		
-		//The full path of hello_world.py, use pwd to get it.
+		//The full path of callAPI MUST be used 
 		String filepath = "C:\\Users\\Pieci\\Desktop\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\callAPI.py";
 		 
 		/*
