@@ -46,7 +46,7 @@ public class TestGraph {
 
 	@Test
 	public void testDigraph() {
-		in = new In(s);
+		//in = new In(s);
 		graph = new EdgeWeightedDigraph(10);
 		
 	}
