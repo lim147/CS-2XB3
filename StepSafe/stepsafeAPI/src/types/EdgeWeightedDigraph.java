@@ -24,9 +24,14 @@ import edu.princeton.cs.algs4.StdRandom;
  *  For additional documentation,
  *  see <a href="https://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
  *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *  
+ *  Was taken from Algorithms Textbook by
+ *  Robert Sedgewick and Kevin Wayne
  *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
+ *  @author Alice Ip
+ *  @author Meijing Li
+ *  @author Robert Vardy
+ *  @author Indika Wijesundera
  */
 public class EdgeWeightedDigraph {
     private static final String NEWLINE = System.getProperty("line.separator");

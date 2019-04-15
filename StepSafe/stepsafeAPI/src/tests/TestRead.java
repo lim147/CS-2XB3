@@ -52,7 +52,6 @@ public class TestRead {
 		dbase.add(crime2);
 		dbase.add(crime3);
 		dbase.add(crime4);
-		
 	}
 
 	@After
@@ -61,10 +60,8 @@ public class TestRead {
 
 	@Test
 	public void test() throws NumberFormatException, IOException {
-
 		testFilter();
 		testPath();
-
 	}
 	
 	public void testEvent(){
@@ -90,6 +87,7 @@ public class TestRead {
 		assert(fList.contains(crime4) == true);
 	}
 	
+	//Test for optimalPath to see if it gets the correct path
 	public void testPath() throws NumberFormatException, IOException{
 		Intersection start = new Intersection(0,0,"Start here");
 		Intersection end = new Intersection(0,0,"End here");
@@ -138,6 +136,7 @@ public class TestRead {
 		dbase2.add(crime4);
 		dbase2.add(crime5);
 		
-		Client.optimalPath(pathL,dbase2);
+		Path testPath = Client.optimalPath(pathL,dbase2);
+		System.out.println(testPath);
 	}
 }
