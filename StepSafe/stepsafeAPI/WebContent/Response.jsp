@@ -40,7 +40,7 @@
 					out.print("<br/>" + "The optimal path is: " + "<br/>" + "<br/>");
 					
 					ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
-					ReadFile.read_from_db(dbase);
+					ReadFile.readFromDB(dbase);
 					
 
 					

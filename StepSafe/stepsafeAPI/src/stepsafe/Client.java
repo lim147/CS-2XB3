@@ -36,16 +36,16 @@ public class Client {
      * 
      */
 	public static ArrayList<Path> generatePaths(String s, String t) throws IOException, InterruptedException {
-		String cmd = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3";
+		String cmd = "python";
 		
 		//The full path of hello_world.py, use pwd to get it.
-		String filepath = "/Users/mc/Desktop/CS_2XB3/2XB3_Project/StepSafe/stepsafeAPI/py_scripts/hello_world.py";
+		String filepath = "C:\\Users\\Pieci\\Desktop\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\callAPI.py";
 		 
 		/*
 		 Alice:
 		 
 		 String cmd = "python";
-		 String filepath = "C:\\Users\\Pieci\\Desktop\\Other\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
+		 String filepath = "C:\\Users\\Pieci\\Desktop\\2XB3_Project\\StepSafe\\stepsafeAPI\\py_scripts\\hello_world.py";
 		 ...; -- The full path of hello_world.py, use pwd to get it.
 		 */
 		
@@ -224,5 +224,25 @@ public class Client {
 			optPath.addIntersection(InterPath.get(a.to()));
 		}
 		return optPath;
+	}
+	
+	public void testClient() throws NumberFormatException, IOException, InterruptedException {
+		ArrayList<Path> paths = Client.generatePaths("Scotiabank Arena, 40 Bay St, Toronto", "Pearson Airport, Mississauga");
+//	System.out.println(paths.size());
+//	for(int i = 0; i < paths.size(); i++) {
+//		System.out.println("One path is:");
+//		Path path = paths.get(i);
+//		System.out.print(path.toString());
+//	}
+//	System.out.println();
+	System.out.println("The optimal path is:");
+
+	ArrayList<Event> dbase = new ArrayList<Event>(); //create a CrmALst instance:
+	ReadFile.readFromDB(dbase);
+
+	Path optPath = stepsafe.Client.optimalPath(paths, dbase);
+
+
+	System.out.println(optPath.toString());	
 	}
 }
