@@ -33,7 +33,7 @@ public class TestGraph {
 	
 	@Before
 	public void setUp() throws Exception {
-		BufferedReader s = new BufferedReader(new FileReader("graphtest"));
+		//BufferedReader s = new BufferedReader(new FileReader("graphtest"));
 		
 	}
 
